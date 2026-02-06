@@ -1,0 +1,1051 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#fff3df" />
+  <title>Pub Old • Palić • Meni i poručivanje</title>
+  <meta name="description" content="Pub Old, Palić • Online meni + korpa + slanje porudžbine" />
+
+  <style>
+    :root{
+      /* “Happy kitchen” palette */
+      --bg: #fff3df;
+      --bg2:#ffe7c2;
+      --panel:#ffffff;
+      --panel2:#fffaf1;
+      --text:#1c1b18;
+      --muted:#5e564b;
+      --accent:#e6452f;
+      --accent2:#2f7d4f;
+      --sun:#ffb020;
+      --line: rgba(28,27,24,.10);
+      --shadow: 0 14px 34px rgba(28,27,24,.12);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1120px;
+      --font: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      line-height:1.45;
+      background:
+        radial-gradient(1000px 600px at 15% -10%, rgba(230,69,47,.18), transparent 55%),
+        radial-gradient(900px 520px at 95% 15%, rgba(47,125,79,.16), transparent 55%),
+        radial-gradient(900px 520px at 45% 105%, rgba(255,176,32,.14), transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    }
+
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 110px;}
+
+    /* Sticky top bar */
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      position:sticky; top:0; z-index:30;
+      background:rgba(255,243,223,.92);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      padding:14px 18px;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width:0;
+    }
+
+    .logoImg{
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      object-fit: contain;
+      background: rgba(255,255,255,.95);
+      border: 1px solid rgba(28,27,24,.12);
+      box-shadow: 0 8px 18px rgba(28,27,24,.10);
+      padding: 4px;
+      flex: 0 0 auto;
+    }
+
+    .brand h1{
+      margin:0; font-size:15px; letter-spacing:.12em; text-transform:uppercase;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+    .brand .sub{
+      margin:0; font-size:12px; color:var(--muted);
+    }
+
+    .actions{display:flex; align-items:center; gap:10px; flex:0 0 auto;}
+
+    .btn{
+      appearance:none;
+      border:1px solid rgba(28,27,24,.14);
+      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.70));
+      color:var(--text);
+      padding:11px 13px;
+      border-radius:14px;
+      cursor:pointer;
+      font-weight:800;
+      font-size:13px;
+      letter-spacing:.02em;
+      box-shadow: 0 10px 20px rgba(28,27,24,.10);
+      display:inline-flex; align-items:center; gap:8px;
+      touch-action: manipulation;
+    }
+    .btn:hover{transform: translateY(-1px); transition: .15s ease;}
+    .btn.primary{
+      border-color: rgba(230,69,47,.35);
+      background:
+        radial-gradient(120% 140% at 20% 0%, rgba(230,69,47,.25), transparent 52%),
+        linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.70));
+    }
+    .btn.danger{
+      border-color: rgba(230,69,47,.45);
+      background:
+        radial-gradient(120% 140% at 20% 0%, rgba(230,69,47,.18), transparent 52%),
+        linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.70));
+    }
+
+    .pill{
+      font-size:12px;
+      color:var(--muted);
+      border:1px solid rgba(28,27,24,.12);
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.75);
+      display:inline-flex; align-items:center; gap:8px;
+      box-shadow: 0 8px 18px rgba(28,27,24,.06);
+      white-space:nowrap;
+    }
+
+    /* Hero */
+    .hero{
+      margin-top:18px;
+      border-radius: var(--radius2);
+      border:1px solid rgba(28,27,24,.10);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      background:
+        radial-gradient(1200px 500px at 20% 10%, rgba(230,69,47,.14), transparent 60%),
+        radial-gradient(900px 500px at 90% 25%, rgba(47,125,79,.12), transparent 60%),
+        linear-gradient(145deg, rgba(255,255,255,.92), rgba(255,250,241,.92));
+      position:relative;
+    }
+    .heroInner{
+      padding:26px 18px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+    }
+    .hero h2{
+      margin:0 0 10px;
+      font-size:34px;
+      letter-spacing:.01em;
+      line-height:1.1;
+    }
+    .hero p{margin:0; color:rgba(28,27,24,.80); max-width:62ch}
+
+    .hero .meta{margin-top:14px; display:flex; flex-wrap:wrap; gap:10px;}
+
+    .heroCard{
+      background: rgba(255,255,255,.78);
+      border:1px solid rgba(28,27,24,.10);
+      border-radius: var(--radius);
+      padding:14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-height:100%;
+      box-shadow: 0 12px 24px rgba(28,27,24,.08);
+    }
+    .heroCard h3{
+      margin:0;
+      font-size:14px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .heroGrid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    .heroStat{
+      border:1px dashed rgba(28,27,24,.16);
+      border-radius:16px;
+      padding:10px;
+      background:rgba(255,250,241,.92);
+    }
+    .heroStat b{display:block; font-size:14px}
+    .heroStat span{font-size:12px; color:var(--muted)}
+
+    /* Sections */
+    .section{margin-top:18px; display:grid; grid-template-columns: 1fr; gap:14px;}
+    .grid2{display:grid; grid-template-columns: 1.15fr .85fr; gap:14px; align-items:start;}
+
+    /* ✅ Mobile-first: stack earlier + add breathing room */
+    @media (max-width: 980px){
+      .heroInner{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      .hero h2{font-size:30px}
+      .wrap{padding-bottom:140px;}
+    }
+
+    .card{
+      background: rgba(255,255,255,.85);
+      border:1px solid rgba(28,27,24,.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .cardHead{
+      padding:14px 14px 0;
+      display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:10px;
+    }
+    .cardHead h3{
+      margin:0;
+      font-size:14px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .cardBody{padding:14px}
+    .muted{color:var(--muted)}
+    .divider{height:1px; background:var(--line); margin:10px 0}
+
+    /* Toolbar */
+    .toolbar{
+      display:flex; flex-wrap:wrap; gap:10px;
+      align-items:center; justify-content:space-between;
+      padding:12px 14px;
+      border-bottom:1px solid var(--line);
+      background:rgba(255,250,241,.78);
+    }
+    .toolbar .left, .toolbar .right{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+
+    .input, select{
+      width:auto;
+      background:rgba(255,255,255,.95);
+      border:1px solid rgba(28,27,24,.12);
+      color:var(--text);
+      border-radius:14px;
+      padding:12px 12px;            /* bigger for mobile */
+      font-size:14px;                /* bigger for mobile */
+      outline:none;
+      min-height:44px;               /* tap target */
+    }
+    .input::placeholder{color:rgba(94,86,75,.75)}
+
+    /* Search becomes full width on phone */
+    @media (max-width: 560px){
+      .topbar{padding:12px 12px}
+      .pill{display:none;} /* hide pill to save space */
+      .toolbar .right{width:100%}
+      #search{width:100%}
+    }
+
+    .chip{
+      border:1px solid rgba(28,27,24,.14);
+      background:rgba(255,255,255,.80);
+      padding:10px 12px;
+      border-radius:999px;
+      cursor:pointer;
+      user-select:none;
+      font-weight:900;
+      font-size:13px;
+      box-shadow: 0 10px 18px rgba(28,27,24,.06);
+      min-height:40px;
+      display:inline-flex;
+      align-items:center;
+      touch-action: manipulation;
+    }
+    .chip.active{
+      border-color: rgba(230,69,47,.40);
+      background: rgba(230,69,47,.12);
+    }
+
+    /* Menu list */
+    .menuList{display:grid; grid-template-columns: 1fr; gap:10px;}
+
+    .menuItem{
+      border:1px solid rgba(28,27,24,.10);
+      border-radius:16px;
+      padding:12px;
+      background:rgba(255,250,241,.78);
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap:12px;
+      align-items:start;
+    }
+
+    /* ✅ On small screens, stack price column under content */
+    @media (max-width: 560px){
+      .menuItem{
+        grid-template-columns:1fr;
+      }
+      .prices{
+        min-width:auto;
+        align-items:flex-start;
+      }
+    }
+
+    .menuItem h4{margin:0; font-size:16px}
+    .menuItem p{margin:6px 0 0; font-size:13px; color:var(--muted)}
+
+    .prices{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      min-width: 140px;
+      align-items:flex-end;
+    }
+    .priceRow{
+      display:flex; gap:10px; align-items:baseline;
+      font-variant-numeric: tabular-nums;
+    }
+    .priceRow .lbl{font-size:11px; color:rgba(94,86,75,.95)}
+    .priceRow .val{font-size:14px; font-weight:900}
+    .priceRow .val.na{opacity:.35; font-weight:800}
+
+    .addToCartRow{
+      margin-top:10px;
+      display:flex; flex-wrap:wrap; gap:8px;
+      align-items:center;
+    }
+    .qty{width:90px; text-align:center;}
+
+    /* Cart */
+    .cartList{display:flex; flex-direction:column; gap:10px;}
+    .cartItem{
+      border:1px solid rgba(28,27,24,.10);
+      border-radius:16px;
+      padding:12px;
+      background:rgba(255,250,241,.78);
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .cartItem b{display:block}
+    .cartItem .small{font-size:12px; color:var(--muted)}
+    .cartItem .right{text-align:right; font-variant-numeric: tabular-nums;}
+    .cartItem .rm{
+      margin-top:6px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(28,27,24,.12);
+      background:rgba(255,255,255,.85);
+      cursor:pointer;
+      font-weight:900;
+      font-size:12px;
+      color:rgba(28,27,24,.88);
+      min-height:40px;
+      touch-action: manipulation;
+    }
+
+    .totals{
+      display:flex; justify-content:space-between; gap:10px;
+      padding:12px 12px;
+      border-radius:16px;
+      border:1px solid rgba(230,69,47,.22);
+      background: rgba(230,69,47,.10);
+      font-variant-numeric: tabular-nums;
+    }
+    .totals b{font-size:14px}
+    .totals span{color:rgba(28,27,24,.92); font-weight:900}
+
+    footer{
+      margin-top:18px;
+      padding:14px;
+      border:1px solid rgba(28,27,24,.10);
+      border-radius: var(--radius);
+      background:rgba(255,255,255,.78);
+      color:var(--muted);
+      font-size:12px;
+      box-shadow: 0 12px 22px rgba(28,27,24,.06);
+    }
+
+    /* Modal */
+    .modalBack{
+      position:fixed; inset:0;
+      background:rgba(28,27,24,.45);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:16px;
+      z-index:60;
+    }
+    .modal{
+      width:min(720px, 100%);
+      border-radius: 22px;
+      border:1px solid rgba(28,27,24,.12);
+      background: rgba(255,255,255,.96);
+      box-shadow: 0 18px 40px rgba(28,27,24,.18);
+      overflow:hidden;
+      max-height: 85vh;
+      display:flex;
+      flex-direction:column;
+    }
+    .modalHead{
+      padding:14px 14px 0;
+      display:flex; justify-content:space-between; align-items:center; gap:10px;
+    }
+    .modalHead h3{margin:0; font-size:14px; letter-spacing:.12em; text-transform:uppercase}
+    .modalBody{padding:14px; overflow:auto}
+    .modalBody pre{
+      margin:0;
+      white-space:pre-wrap;
+      background:rgba(255,250,241,.92);
+      border:1px solid rgba(28,27,24,.10);
+      border-radius:16px;
+      padding:12px;
+      font-size:12px;
+      color:rgba(28,27,24,.92);
+      font-variant-numeric: tabular-nums;
+    }
+    .note{font-size:12px; color:var(--muted); margin-top:10px;}
+
+    /* ✅ Sticky bottom cart bar (mobile only) */
+    .bottomBar{
+      position:fixed;
+      left:0; right:0; bottom:0;
+      z-index:70;
+      display:none;
+      padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+      background:rgba(255,243,223,.96);
+      border-top:1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .bottomBarInner{
+      max-width:var(--max);
+      margin:0 auto;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .bottomTotal{
+      font-weight:900;
+      font-variant-numeric: tabular-nums;
+      font-size:14px;
+      white-space:nowrap;
+    }
+    .bottomHint{
+      font-size:12px;
+      color:var(--muted);
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      max-width: 52vw;
+    }
+    @media (max-width: 980px){
+      .bottomBar{display:block;}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <!-- LOGO: keep file name here (replace with your new logo file anytime) -->
+      <img class="logoImg" src="1000033261.png" alt="Pub Old Palić logo" />
+      <div style="min-width:0">
+        <h1>Pub Old</h1>
+        <p class="sub">Palić • Online meni i poručivanje</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <span class="pill" title="Veličine pizza">S 22cm • L 28cm • XXL 50cm</span>
+      <button class="btn primary" type="button" onclick="goToOrder()">
+        Poruči
+      </button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="heroInner">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+            <img src="1000033261.png" alt="Pub Old Palić logo"
+                 style="width:74px;height:74px;object-fit:contain;border-radius:18px;border:1px solid rgba(28,27,24,.12);background:rgba(255,255,255,.92);padding:6px;box-shadow:0 12px 22px rgba(28,27,24,.10)" />
+            <div>
+              <div style="letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:rgba(28,27,24,.86);font-weight:900">Pub Old</div>
+              <div style="font-size:12px;color:rgba(94,86,75,.95)">Palić • Pizza • Piće</div>
+            </div>
+          </div>
+
+          <h2>Meni i poručivanje.<br/>Brzo i jednostavno.</h2>
+          <p>
+            Skroluj, izaberi pizzu, dodaj u korpu i pošalji porudžbinu.
+          </p>
+
+          <div class="meta">
+            <span class="pill">🍕 Pizza</span>
+            <span class="pill">☕ Kafa</span>
+            <span class="pill">🍺 Pivo</span>
+            <span class="pill">🥃 Kratka pića</span>
+          </div>
+        </div>
+
+        <aside class="heroCard">
+          <h3>Info</h3>
+          <div class="heroGrid">
+            <div class="heroStat">
+              <b>Lokacija</b>
+              <span>Palić, Srbija</span>
+            </div>
+            <div class="heroStat">
+              <b>Porudžbine</b>
+              <span>Korpa → pošalji</span>
+            </div>
+            <div class="heroStat">
+              <b>Veličine</b>
+              <span>S 22cm, L 28cm, XXL 50cm</span>
+            </div>
+            <div class="heroStat">
+              <b>Način</b>
+              <span>Preuzimanje / dostava (po dogovoru)</span>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="note">
+            *Telefon, adresa i radno vreme ubacujemo kad dobiješ tačne podatke.
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section grid2">
+      <!-- MENU -->
+      <div class="card" id="menu">
+        <div class="toolbar">
+          <div class="left">
+            <b style="letter-spacing:.12em;text-transform:uppercase;font-size:13px">Meni</b>
+            <span class="muted" style="font-size:12px">Cene su u RSD</span>
+          </div>
+
+          <div class="right">
+            <input class="input" id="search" placeholder="Pretraga (npr. šunka, ljuta, gljive)..." />
+            <span class="chip active" data-filter="all" onclick="setFilter('all', this)">Sve</span>
+            <span class="chip" data-filter="ljuta" onclick="setFilter('ljuta', this)">Ljuta</span>
+            <span class="chip" data-filter="morski" onclick="setFilter('morski', this)">Morski plodovi</span>
+          </div>
+        </div>
+
+        <div class="cardBody">
+          <div class="menuList" id="menuList"></div>
+
+          <div class="divider"></div>
+
+          <div class="card" style="background:rgba(255,255,255,.76);border-color:rgba(28,27,24,.10)">
+            <div class="cardHead">
+              <h3>Prilozi i dodaci</h3>
+              <span class="muted" style="font-size:12px">Dodaj uz pizzu</span>
+            </div>
+            <div class="cardBody">
+              <div class="menuList" id="extrasList"></div>
+              <p class="muted" style="margin:10px 0 0;font-size:12px">
+                Napomena: Cene dodataka imaju različite iznose po veličini (S/L/XXL) tamo gde je naznačeno.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ORDER / CART -->
+      <div class="card" id="order">
+        <div class="cardHead">
+          <h3>Porudžbina</h3>
+          <span class="muted" style="font-size:12px">Korpa + slanje</span>
+        </div>
+        <div class="cardBody">
+          <div class="cartList" id="cartList"></div>
+
+          <div style="margin-top:10px" class="totals">
+            <b>Ukupno</b>
+            <span id="total">0 RSD</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <form name="pubold-order" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleSubmit(event)">
+            <input type="hidden" name="form-name" value="pubold-order" />
+            <p style="display:none">
+              <label>Don’t fill this out: <input name="bot-field" /></label>
+            </p>
+
+            <label class="muted" style="font-size:12px;display:block;margin-bottom:6px">Ime i prezime</label>
+            <input class="input" style="width:100%" name="customer_name" id="customer_name" placeholder="npr. Marko Marković" required />
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
+              <div>
+                <label class="muted" style="font-size:12px;display:block;margin-bottom:6px">Telefon</label>
+                <input class="input" style="width:100%" name="customer_phone" id="customer_phone" placeholder="npr. 06x xxx xxxx" required />
+              </div>
+              <div>
+                <label class="muted" style="font-size:12px;display:block;margin-bottom:6px">Način</label>
+                <select class="input" style="width:100%" name="fulfillment" id="fulfillment">
+                  <option value="Preuzimanje">Preuzimanje</option>
+                  <option value="Dostava (po dogovoru)">Dostava (po dogovoru)</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-top:10px">
+              <label class="muted" style="font-size:12px;display:block;margin-bottom:6px">Adresa / napomena</label>
+              <input class="input" style="width:100%" name="customer_note" id="customer_note" placeholder="Adresa (ako je dostava) + posebne napomene" />
+            </div>
+
+            <div style="margin-top:10px">
+              <label class="muted" style="font-size:12px;display:block;margin-bottom:6px">Porudžbina (auto)</label>
+              <input class="input" style="width:100%" name="order_payload" id="order_payload" readonly />
+            </div>
+
+            <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:12px">
+              <button class="btn primary" type="submit">Pošalji</button>
+              <button class="btn" type="button" onclick="sendMailto()">Pošalji mail (fallback)</button>
+              <button class="btn danger" type="button" onclick="clearCart()">Isprazni korpu</button>
+              <button class="btn" type="button" onclick="openSummary()">Pregled</button>
+            </div>
+
+            <p class="note">
+              Netlify: “Pošalji” ide kao form submission (može na email kroz notifications).
+              Ako nije Netlify: koristi “Pošalji mail (fallback)”.
+            </p>
+          </form>
+
+          <div class="divider"></div>
+
+          <div class="card" style="background:rgba(255,255,255,.76);border-color:rgba(28,27,24,.10)">
+            <div class="cardHead">
+              <h3>Pića</h3>
+              <span class="muted" style="font-size:12px">Placeholder (dopuni tačnim cenama)</span>
+            </div>
+            <div class="cardBody">
+              <div class="menuList" id="drinksList"></div>
+              <p class="muted" style="margin:10px 0 0;font-size:12px">
+                Pića su trenutno primeri da bi stranica bila kompletna. Ubaciš stvarne stavke i cene kad dobiješ karticu.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <b>Pub Old • Palić</b><br/>
+      Online meni + poručivanje.<br/>
+      <span class="muted">© 2026 • Spremno za dodavanje adrese, radnog vremena, telefona, mreža i mape.</span>
+    </footer>
+  </main>
+
+  <!-- Sticky bottom bar (mobile) -->
+  <div class="bottomBar" aria-label="Korpa (mobilno)">
+    <div class="bottomBarInner">
+      <div>
+        <div class="bottomTotal" id="bottomTotal">0 RSD</div>
+        <div class="bottomHint" id="bottomHint">Korpa</div>
+      </div>
+      <button class="btn primary" type="button" onclick="goToOrder()">Idi na porudžbinu</button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modalBack" id="modalBack" role="dialog" aria-modal="true" aria-label="Pregled porudžbine">
+    <div class="modal">
+      <div class="modalHead">
+        <h3>Pregled porudžbine</h3>
+        <button class="btn" type="button" onclick="closeModal()">Zatvori</button>
+      </div>
+      <div class="modalBody">
+        <pre id="summaryText"></pre>
+        <div class="note">Ovo je tekst koji ide u “order_payload” i u email (fallback).</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ===== MENU DATA =====
+    const sizes = [
+      { key: "S", label: "S (22cm)" },
+      { key: "L", label: "L (28cm)" },
+      { key: "XXL", label: "XXL (50cm)" }
+    ];
+
+    // ✅ Videos removed completely (mobile-friendly, faster, no trays)
+    const pizzas = [
+      { id:"brot", name:"Pizza Brot", desc:"aromatični kečap, začini", tags:[], price:{ S:null, L:400, XXL:null } },
+      { id:"brotbeli", name:"Pizza Brot Beli", desc:"pavlaka, začini", tags:[], price:{ S:null, L:450, XXL:null } },
+
+      { id:"sir", name:"Pizza sa Sirom", desc:"kečap, sir", tags:[], price:{ S:600, L:700, XXL:1550 } },
+      { id:"sirglj", name:"Pizza sa Sirom i Gljivama", desc:"kečap, sir, gljive", tags:[], price:{ S:600, L:750, XXL:1600 } },
+      { id:"veg", name:"Pizza Vegetariana", desc:"kečap, sir, gljive, kukuruz", tags:[], price:{ S:650, L:750, XXL:1600 } },
+      { id:"sunk", name:"Pizza sa Šunkom", desc:"kečap, šunka, sir", tags:[], price:{ S:650, L:750, XXL:1650 } },
+      { id:"kukur", name:"Pizza sa Kukuruzom", desc:"kečap, šunka, sir, kukuruz", tags:[], price:{ S:700, L:800, XXL:1800 } },
+      { id:"glj", name:"Pizza sa Gljivama", desc:"kečap, šunka, sir, gljive", tags:[], price:{ S:700, L:800, XXL:1800 } },
+      { id:"mes", name:"Pizza Mešana", desc:"kečap, šunka, sir, gljive, paprika", tags:[], price:{ S:700, L:800, XXL:1800 } },
+
+      { id:"domaca", name:"Pizza Domaća", desc:"kečap, šunka, sir, kobasica, paprika, jaje", tags:[], price:{ S:750, L:850, XXL:1850 } },
+      { id:"pub", name:"Pizza Pub", desc:"kečap, šunka, sir, luk, kobasica, slanina, jaje", tags:[], price:{ S:750, L:850, XXL:1900 } },
+
+      { id:"chief", name:"Pizza Ala Chief (Ljuta)", desc:"kečap, šunka, sir, luk, paprika, pavlaka", tags:["ljuta"], price:{ S:700, L:800, XXL:1800 } },
+      { id:"mexico", name:"Pizza Mexico (Ljuta)", desc:"kečap, šunka, sir, pasulj, kukuruz", tags:["ljuta"], price:{ S:700, L:800, XXL:1800 } },
+      { id:"acapulco", name:"Pizza Acapulco (Ljuta)", desc:"kečap, šunka, sir, gljive, kukuruz, pavlaka", tags:["ljuta"], price:{ S:700, L:800, XXL:1800 } },
+      { id:"salvatore", name:"Pizza Salvatore (Ljuta)", desc:"kečap, šunka, sir, gljive, masline, beli luk", tags:["ljuta"], price:{ S:700, L:800, XXL:1800 } },
+
+      { id:"hawaii", name:"Pizza Hawaii", desc:"pavlaka, šunka, sir, ananas", tags:[], price:{ S:700, L:800, XXL:1800 } },
+      { id:"sardine", name:"Pizza sa Sardinama", desc:"kečap, šunka, sir, sardine", tags:["morski"], price:{ S:700, L:800, XXL:1800 } },
+      { id:"skoljke", name:"Pizza sa Školjkama", desc:"kečap, šunka, sir, školjke", tags:["morski"], price:{ S:750, L:850, XXL:1900 } },
+      { id:"delikates", name:"Pizza Delikates", desc:"kečap, šunka, sir, gljive, školjke", tags:["morski"], price:{ S:750, L:850, XXL:1900 } },
+      { id:"tunjevina", name:"Pizza sa Tunjevinom", desc:"kečap, sir, tunjevina, masline", tags:["morski"], price:{ S:750, L:850, XXL:1900 } },
+
+      { id:"atlantic", name:"Pizza Atlantic", desc:"kečap, sir, sardine, masline, školjke", tags:["morski"], price:{ S:800, L:900, XXL:1950 } },
+      { id:"4god", name:"Pizza 4 Godišnja Doba", desc:"kečap, šunka, sir, gljive, kobasica, masline, školjke", tags:["morski"], price:{ S:800, L:900, XXL:2000 } }
+    ];
+
+    const extras = [
+      { id:"por_masline", name:"Porcija masline", desc:"", fixed:250 },
+      { id:"por_ananas", name:"Porcija ananas", desc:"", fixed:250 },
+      { id:"por_feferone", name:"Porcija feferone", desc:"", fixed:250 },
+      { id:"jaje", name:"Jaje (kom)", desc:"", bySize:{ S:50, L:50, XXL:50 } },
+      { id:"dodaci_std", name:"Dodaci (masline, gljive, slanina, kobasica, pasulj, šunka, sir, ananas)", desc:"", bySize:{ S:50, L:100, XXL:150 } },
+      { id:"dodaci_morski", name:"Dodaci (sardine, školjke, tunjevina)", desc:"", bySize:{ S:100, L:150, XXL:200 } },
+      { id:"kecap", name:"Kečap (2 dcl)", desc:"", bySize:{ S:50, L:50, XXL:50 } }
+    ];
+
+    const drinks = [
+      { group:"Bezalkoholno", items:[
+        { name:"Coca-Cola / Fanta / Sprite", price:"—" },
+        { name:"Ledeni čaj", price:"—" },
+        { name:"Voda (gazirana / negazirana)", price:"—" },
+        { name:"Sokovi (narandža, jabuka…)", price:"—" },
+      ]},
+      { group:"Kafa", items:[
+        { name:"Espresso", price:"—" },
+        { name:"Espresso sa mlekom", price:"—" },
+        { name:"Cappuccino", price:"—" },
+        { name:"Latte", price:"—" },
+      ]},
+      { group:"Pivo (flaša / točeno)", items:[
+        { name:"Lokalno pivo 1", price:"—" },
+        { name:"Lokalno pivo 2", price:"—" },
+        { name:"Točeno pivo", price:"—" },
+        { name:"Craft (opciono)", price:"—" },
+      ]},
+      { group:"Kratka pića (12 mesta)", items:[
+        { name:"Vodka", price:"—" }, { name:"Whiskey", price:"—" }, { name:"Rakija", price:"—" },
+        { name:"Gin", price:"—" }, { name:"Rum", price:"—" }, { name:"Tequila", price:"—" },
+        { name:"Vermut", price:"—" }, { name:"Pelinkovac", price:"—" }, { name:"Jäger", price:"—" },
+        { name:"Konjak", price:"—" }, { name:"Likeri", price:"—" }, { name:"Aperitiv", price:"—" },
+      ]}
+    ];
+
+    // ===== STATE =====
+    let filter = "all";
+    let cart = [];
+
+    function fmtRSD(n){
+      if (n === null || n === undefined) return "—";
+      return new Intl.NumberFormat("sr-RS").format(n) + " RSD";
+    }
+
+    function goToOrder(){
+      document.getElementById('order').scrollIntoView({behavior:'smooth'});
+    }
+
+    function updateBottomBar(){
+      const total = cart.reduce((s, c) => s + c.total, 0);
+      const count = cart.reduce((s, c) => s + c.qty, 0);
+
+      document.getElementById("bottomTotal").textContent = fmtRSD(total);
+      document.getElementById("bottomHint").textContent = count ? `Stavki u korpi: ${count}` : "Korpa je prazna";
+    }
+
+    function renderMenu(){
+      const q = (document.getElementById("search").value || "").trim().toLowerCase();
+      const list = document.getElementById("menuList");
+      list.innerHTML = "";
+
+      const filtered = pizzas.filter(p => {
+        const hay = (p.name + " " + (p.desc||"") + " " + (p.tags||[]).join(" ")).toLowerCase();
+        const matchQ = !q || hay.includes(q);
+        const matchF = filter === "all" || (p.tags||[]).includes(filter);
+        return matchQ && matchF;
+      });
+
+      filtered.forEach(p => {
+        const el = document.createElement("div");
+        el.className = "menuItem";
+
+        const left = document.createElement("div");
+        left.innerHTML = `
+          <div>
+            <h4>${p.name}</h4>
+            <p>${p.desc ? "(" + p.desc + ")" : ""}</p>
+            <div class="addToCartRow">
+              <select class="input" aria-label="Veličina" id="size_${p.id}">
+                ${sizes.map(s => `<option value="${s.key}">${s.label}</option>`).join("")}
+              </select>
+              <input class="input qty" aria-label="Količina" id="qty_${p.id}" type="number" min="1" step="1" value="1" />
+              <button class="btn primary" type="button" onclick="addPizza('${p.id}')">Dodaj</button>
+            </div>
+          </div>
+        `;
+
+        const right = document.createElement("div");
+        right.className = "prices";
+        right.innerHTML = `
+          ${sizes.map(s => {
+            const v = p.price[s.key];
+            return `
+              <div class="priceRow">
+                <span class="lbl">${s.key}</span>
+                <span class="val ${v===null?'na':''}">${fmtRSD(v)}</span>
+              </div>`;
+          }).join("")}
+        `;
+
+        el.appendChild(left);
+        el.appendChild(right);
+        list.appendChild(el);
+      });
+
+      if (!filtered.length){
+        const empty = document.createElement("div");
+        empty.className = "muted";
+        empty.style.padding = "10px";
+        empty.textContent = "Nema rezultata.";
+        list.appendChild(empty);
+      }
+    }
+
+    function renderExtras(){
+      const list = document.getElementById("extrasList");
+      list.innerHTML = "";
+
+      extras.forEach(x => {
+        const el = document.createElement("div");
+        el.className = "menuItem";
+
+        const left = document.createElement("div");
+        left.innerHTML = `
+          <h4>${x.name}</h4>
+          <p>${x.desc || ""}</p>
+          <div class="addToCartRow">
+            <select class="input" aria-label="Veličina" id="xsize_${x.id}">
+              ${sizes.map(s => `<option value="${s.key}">${s.label}</option>`).join("")}
+            </select>
+            <input class="input qty" aria-label="Količina" id="xqty_${x.id}" type="number" min="1" step="1" value="1" />
+            <button class="btn primary" type="button" onclick="addExtra('${x.id}')">Dodaj</button>
+          </div>
+        `;
+
+        const right = document.createElement("div");
+        right.className = "prices";
+
+        if (typeof x.fixed === "number"){
+          right.innerHTML = `<div class="priceRow"><span class="lbl">Cena</span><span class="val">${fmtRSD(x.fixed)}</span></div>`;
+        } else {
+          right.innerHTML = sizes.map(s => {
+            const v = x.bySize?.[s.key] ?? null;
+            return `
+              <div class="priceRow">
+                <span class="lbl">${s.key}</span>
+                <span class="val ${v===null?'na':''}">${fmtRSD(v)}</span>
+              </div>`;
+          }).join("");
+        }
+
+        el.appendChild(left);
+        el.appendChild(right);
+        list.appendChild(el);
+      });
+    }
+
+    function renderDrinks(){
+      const list = document.getElementById("drinksList");
+      list.innerHTML = "";
+
+      drinks.forEach(section => {
+        const block = document.createElement("div");
+        block.className = "card";
+        block.style.background = "rgba(255,255,255,.76)";
+        block.style.borderColor = "rgba(28,27,24,.10)";
+
+        const head = document.createElement("div");
+        head.className = "cardHead";
+        head.innerHTML = `<h3>${section.group}</h3><span class="muted" style="font-size:12px">—</span>`;
+
+        const body = document.createElement("div");
+        body.className = "cardBody";
+        body.innerHTML = section.items.map(i => `
+          <div style="display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid rgba(28,27,24,.08);padding:10px 0">
+            <span>${i.name}</span>
+            <span class="muted" style="font-variant-numeric:tabular-nums">${i.price}</span>
+          </div>
+        `).join("");
+
+        block.appendChild(head);
+        block.appendChild(body);
+        list.appendChild(block);
+      });
+    }
+
+    function renderCart(){
+      const list = document.getElementById("cartList");
+      list.innerHTML = "";
+
+      if (!cart.length){
+        const empty = document.createElement("div");
+        empty.className = "muted";
+        empty.textContent = "Korpa je prazna.";
+        list.appendChild(empty);
+      } else {
+        cart.forEach((c, idx) => {
+          const el = document.createElement("div");
+          el.className = "cartItem";
+          el.innerHTML = `
+            <div>
+              <b>${c.name}</b>
+              <div class="small">Veličina: ${c.size} • Kom: ${c.qty}</div>
+              ${c.note ? `<div class="small">Napomena: ${escapeHtml(c.note)}</div>` : ``}
+            </div>
+            <div class="right">
+              <b>${fmtRSD(c.total)}</b>
+              <div class="small">${fmtRSD(c.unit)} / kom</div>
+              <button class="rm" type="button" onclick="removeCart(${idx})">Ukloni</button>
+            </div>
+          `;
+          list.appendChild(el);
+        });
+      }
+
+      const total = cart.reduce((s, c) => s + c.total, 0);
+      document.getElementById("total").textContent = fmtRSD(total);
+      document.getElementById("order_payload").value = buildOrderText();
+      updateBottomBar();
+    }
+
+    function addPizza(id){
+      const p = pizzas.find(x => x.id === id);
+      const size = document.getElementById("size_" + id).value;
+      const qty = Math.max(1, parseInt(document.getElementById("qty_" + id).value || "1", 10));
+      const unit = p.price[size];
+
+      if (unit === null || unit === undefined){
+        alert("Ova veličina nema cenu za " + p.name + ". Izaberi drugu veličinu.");
+        return;
+      }
+
+      cart.push({ type:"pizza", id, name:p.name, size, qty, unit, total: unit * qty });
+      renderCart();
+    }
+
+    function addExtra(id){
+      const x = extras.find(e => e.id === id);
+      const size = document.getElementById("xsize_" + id).value;
+      const qty = Math.max(1, parseInt(document.getElementById("xqty_" + id).value || "1", 10));
+
+      let unit = null;
+      if (typeof x.fixed === "number") unit = x.fixed;
+      else unit = x.bySize?.[size];
+
+      if (unit === null || unit === undefined){
+        alert("Nema cene za ovaj dodatak u izabranoj veličini.");
+        return;
+      }
+
+      cart.push({ type:"extra", id, name:x.name, size, qty, unit, total: unit * qty });
+      renderCart();
+    }
+
+    function removeCart(idx){ cart.splice(idx, 1); renderCart(); }
+    function clearCart(){ cart = []; renderCart(); }
+
+    function setFilter(f, el){
+      filter = f;
+      document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+      el.classList.add("active");
+      renderMenu();
+    }
+
+    function buildOrderText(){
+      const name = (document.getElementById("customer_name")?.value || "").trim();
+      const phone = (document.getElementById("customer_phone")?.value || "").trim();
+      const fulfill = document.getElementById("fulfillment")?.value || "—";
+      const note = (document.getElementById("customer_note")?.value || "").trim();
+
+      const lines = [];
+      lines.push("PUB OLD • PALIĆ • PORUDŽBINA");
+      lines.push("================================");
+      if (name) lines.push("Kupac: " + name);
+      if (phone) lines.push("Telefon: " + phone);
+      lines.push("Način: " + fulfill);
+      if (note) lines.push("Napomena: " + note);
+      lines.push("--------------------------------");
+
+      if (!cart.length){
+        lines.push("(Korpa prazna)");
+      } else {
+        cart.forEach((c, i) => lines.push(`${i+1}. ${c.name} • ${c.size} • x${c.qty} • ${fmtRSD(c.total)}`));
+      }
+
+      lines.push("--------------------------------");
+      const total = cart.reduce((s, c) => s + c.total, 0);
+      lines.push("UKUPNO: " + fmtRSD(total));
+      lines.push("================================");
+      lines.push("Vreme: " + new Date().toLocaleString("sr-RS"));
+
+      return lines.join("\n");
+    }
+
+    function openSummary(){
+      document.getElementById("summaryText").textContent = buildOrderText();
+      document.getElementById("modalBack").style.display = "flex";
+    }
+    function closeModal(){ document.getElementById("modalBack").style.display = "none"; }
+
+    function sendMailto(){
+      if (!cart.length){ alert("Korpa je prazna."); return; }
+      const kitchenEmail = "kitchen@pubold.rs"; // TODO
+      const subject = encodeURIComponent("Pub Old • Porudžbina");
+      const body = encodeURIComponent(buildOrderText());
+      window.location.href = `mailto:${kitchenEmail}?subject=${subject}&body=${body}`;
+    }
+
+    function handleSubmit(e){
+      if (!cart.length){
+        e.preventDefault();
+        alert("Korpa je prazna.");
+        return false;
+      }
+      document.getElementById("order_payload").value = buildOrderText();
+      return true;
+    }
+
+    function escapeHtml(str){
+      return (str || "").replace(/[&<>"']/g, (m) => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"
+      }[m]));
+    }
+
+    // ===== INIT =====
+    document.getElementById("search").addEventListener("input", () => renderMenu());
+
+    renderMenu();
+    renderExtras();
+    renderDrinks();
+    renderCart();
+
+    document.getElementById("modalBack").addEventListener("click", (e) => {
+      if (e.target.id === "modalBack") closeModal();
+    });
+  </script>
+</body>
+</html>
