@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#fff3df" />
-  <title>Pub Old • Palić • Meni i poručivanje</title>
-  <meta name="description" content="Pub Old, Palić • Online meni + korpa + slanje porudžbine" />
+  <title>Pub Old Palić Pizzeria • Meni</title>
+  <meta name="description" content="Pub Old Palić Pizzeria • Meni sa cenama" />
 
   <style>
     :root{
@@ -42,7 +42,7 @@
     }
 
     a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 110px;}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 40px;}
 
     /* Sticky top bar */
     .topbar{
@@ -58,55 +58,12 @@
       display:flex; align-items:center; gap:12px; min-width:0;
     }
 
-    .logoImg{
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      object-fit: contain;
-      background: rgba(255,255,255,.95);
-      border: 1px solid rgba(28,27,24,.12);
-      box-shadow: 0 8px 18px rgba(28,27,24,.10);
-      padding: 4px;
-      flex: 0 0 auto;
-    }
-
     .brand h1{
       margin:0; font-size:15px; letter-spacing:.12em; text-transform:uppercase;
       white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
     }
     .brand .sub{
       margin:0; font-size:12px; color:var(--muted);
-    }
-
-    .actions{display:flex; align-items:center; gap:10px; flex:0 0 auto;}
-
-    .btn{
-      appearance:none;
-      border:1px solid rgba(28,27,24,.14);
-      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.70));
-      color:var(--text);
-      padding:11px 13px;
-      border-radius:14px;
-      cursor:pointer;
-      font-weight:800;
-      font-size:13px;
-      letter-spacing:.02em;
-      box-shadow: 0 10px 20px rgba(28,27,24,.10);
-      display:inline-flex; align-items:center; gap:8px;
-      touch-action: manipulation;
-    }
-    .btn:hover{transform: translateY(-1px); transition: .15s ease;}
-    .btn.primary{
-      border-color: rgba(230,69,47,.35);
-      background:
-        radial-gradient(120% 140% at 20% 0%, rgba(230,69,47,.25), transparent 52%),
-        linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.70));
-    }
-    .btn.danger{
-      border-color: rgba(230,69,47,.45);
-      background:
-        radial-gradient(120% 140% at 20% 0%, rgba(230,69,47,.18), transparent 52%),
-        linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.70));
     }
 
     .pill{
@@ -137,7 +94,7 @@
     .heroInner{
       padding:26px 18px;
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
+      grid-template-columns: 1.15fr .85fr;
       gap:18px;
     }
     .hero h2{
@@ -187,12 +144,10 @@
     .section{margin-top:18px; display:grid; grid-template-columns: 1fr; gap:14px;}
     .grid2{display:grid; grid-template-columns: 1.15fr .85fr; gap:14px; align-items:start;}
 
-    /* ✅ Mobile-first: stack earlier + add breathing room */
     @media (max-width: 980px){
       .heroInner{grid-template-columns:1fr}
       .grid2{grid-template-columns:1fr}
       .hero h2{font-size:30px}
-      .wrap{padding-bottom:140px;}
     }
 
     .card{
@@ -232,17 +187,16 @@
       border:1px solid rgba(28,27,24,.12);
       color:var(--text);
       border-radius:14px;
-      padding:12px 12px;            /* bigger for mobile */
-      font-size:14px;                /* bigger for mobile */
+      padding:12px 12px;
+      font-size:14px;
       outline:none;
-      min-height:44px;               /* tap target */
+      min-height:44px;
     }
     .input::placeholder{color:rgba(94,86,75,.75)}
 
-    /* Search becomes full width on phone */
     @media (max-width: 560px){
       .topbar{padding:12px 12px}
-      .pill{display:none;} /* hide pill to save space */
+      .pill{display:none;}
       .toolbar .right{width:100%}
       #search{width:100%}
     }
@@ -281,15 +235,9 @@
       align-items:start;
     }
 
-    /* ✅ On small screens, stack price column under content */
     @media (max-width: 560px){
-      .menuItem{
-        grid-template-columns:1fr;
-      }
-      .prices{
-        min-width:auto;
-        align-items:flex-start;
-      }
+      .menuItem{ grid-template-columns:1fr; }
+      .prices{ min-width:auto; align-items:flex-start; }
     }
 
     .menuItem h4{margin:0; font-size:16px}
@@ -299,7 +247,7 @@
       display:flex;
       flex-direction:column;
       gap:6px;
-      min-width: 140px;
+      min-width: 150px;
       align-items:flex-end;
     }
     .priceRow{
@@ -309,53 +257,6 @@
     .priceRow .lbl{font-size:11px; color:rgba(94,86,75,.95)}
     .priceRow .val{font-size:14px; font-weight:900}
     .priceRow .val.na{opacity:.35; font-weight:800}
-
-    .addToCartRow{
-      margin-top:10px;
-      display:flex; flex-wrap:wrap; gap:8px;
-      align-items:center;
-    }
-    .qty{width:90px; text-align:center;}
-
-    /* Cart */
-    .cartList{display:flex; flex-direction:column; gap:10px;}
-    .cartItem{
-      border:1px solid rgba(28,27,24,.10);
-      border-radius:16px;
-      padding:12px;
-      background:rgba(255,250,241,.78);
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      align-items:flex-start;
-    }
-    .cartItem b{display:block}
-    .cartItem .small{font-size:12px; color:var(--muted)}
-    .cartItem .right{text-align:right; font-variant-numeric: tabular-nums;}
-    .cartItem .rm{
-      margin-top:6px;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid rgba(28,27,24,.12);
-      background:rgba(255,255,255,.85);
-      cursor:pointer;
-      font-weight:900;
-      font-size:12px;
-      color:rgba(28,27,24,.88);
-      min-height:40px;
-      touch-action: manipulation;
-    }
-
-    .totals{
-      display:flex; justify-content:space-between; gap:10px;
-      padding:12px 12px;
-      border-radius:16px;
-      border:1px solid rgba(230,69,47,.22);
-      background: rgba(230,69,47,.10);
-      font-variant-numeric: tabular-nums;
-    }
-    .totals b{font-size:14px}
-    .totals span{color:rgba(28,27,24,.92); font-weight:900}
 
     footer{
       margin-top:18px;
@@ -368,81 +269,21 @@
       box-shadow: 0 12px 22px rgba(28,27,24,.06);
     }
 
-    /* Modal */
-    .modalBack{
-      position:fixed; inset:0;
-      background:rgba(28,27,24,.45);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding:16px;
-      z-index:60;
-    }
-    .modal{
-      width:min(720px, 100%);
-      border-radius: 22px;
-      border:1px solid rgba(28,27,24,.12);
-      background: rgba(255,255,255,.96);
-      box-shadow: 0 18px 40px rgba(28,27,24,.18);
-      overflow:hidden;
-      max-height: 85vh;
-      display:flex;
-      flex-direction:column;
-    }
-    .modalHead{
-      padding:14px 14px 0;
-      display:flex; justify-content:space-between; align-items:center; gap:10px;
-    }
-    .modalHead h3{margin:0; font-size:14px; letter-spacing:.12em; text-transform:uppercase}
-    .modalBody{padding:14px; overflow:auto}
-    .modalBody pre{
-      margin:0;
-      white-space:pre-wrap;
-      background:rgba(255,250,241,.92);
-      border:1px solid rgba(28,27,24,.10);
-      border-radius:16px;
-      padding:12px;
-      font-size:12px;
-      color:rgba(28,27,24,.92);
-      font-variant-numeric: tabular-nums;
-    }
-    .note{font-size:12px; color:var(--muted); margin-top:10px;}
-
-    /* ✅ Sticky bottom cart bar (mobile only) */
-    .bottomBar{
-      position:fixed;
-      left:0; right:0; bottom:0;
-      z-index:70;
-      display:none;
-      padding:10px 12px calc(10px + env(safe-area-inset-bottom));
-      background:rgba(255,243,223,.96);
-      border-top:1px solid var(--line);
-      backdrop-filter: blur(10px);
-    }
-    .bottomBarInner{
-      max-width:var(--max);
-      margin:0 auto;
-      display:flex;
+    /* Drinks rows */
+    .drinkRow{
+      display:grid;
+      grid-template-columns: 1fr auto auto;
       gap:10px;
-      align-items:center;
-      justify-content:space-between;
-    }
-    .bottomTotal{
-      font-weight:900;
+      padding:10px 0;
+      border-bottom:1px solid rgba(28,27,24,.08);
+      align-items:baseline;
       font-variant-numeric: tabular-nums;
-      font-size:14px;
-      white-space:nowrap;
     }
-    .bottomHint{
-      font-size:12px;
-      color:var(--muted);
-      overflow:hidden;
-      text-overflow:ellipsis;
-      white-space:nowrap;
-      max-width: 52vw;
-    }
-    @media (max-width: 980px){
-      .bottomBar{display:block;}
+    .drinkRow .vol{color:var(--muted); font-size:12px; white-space:nowrap}
+    .drinkRow .pr{font-weight:900; white-space:nowrap}
+    @media (max-width: 560px){
+      .drinkRow{grid-template-columns:1fr auto; }
+      .drinkRow .vol{display:none;}
     }
   </style>
 </head>
@@ -450,19 +291,15 @@
 <body>
   <header class="topbar">
     <div class="brand">
-      <!-- LOGO: keep file name here (replace with your new logo file anytime) -->
-      <img class="logoImg" src="1000033261.png" alt="Pub Old Palić logo" />
       <div style="min-width:0">
-        <h1>Pub Old</h1>
-        <p class="sub">Palić • Online meni i poručivanje</p>
+        <h1>Pub Old Palić Pizzeria</h1>
+        <p class="sub">Palić • Meni sa cenama (poručivanje kod konobara)</p>
       </div>
     </div>
 
-    <div class="actions">
+    <div style="display:flex; gap:10px; align-items:center;">
       <span class="pill" title="Veličine pizza">S 22cm • L 28cm • XXL 50cm</span>
-      <button class="btn primary" type="button" onclick="goToOrder()">
-        Poruči
-      </button>
+      <span class="pill">Cene u RSD</span>
     </div>
   </header>
 
@@ -470,25 +307,25 @@
     <section class="hero">
       <div class="heroInner">
         <div>
-          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
-            <img src="1000033261.png" alt="Pub Old Palić logo"
-                 style="width:74px;height:74px;object-fit:contain;border-radius:18px;border:1px solid rgba(28,27,24,.12);background:rgba(255,255,255,.92);padding:6px;box-shadow:0 12px 22px rgba(28,27,24,.10)" />
-            <div>
-              <div style="letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:rgba(28,27,24,.86);font-weight:900">Pub Old</div>
-              <div style="font-size:12px;color:rgba(94,86,75,.95)">Palić • Pizza • Piće</div>
-            </div>
+          <div style="letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:rgba(28,27,24,.86);font-weight:900">
+            Pub Old Palić Pizzeria
+          </div>
+          <div style="font-size:12px;color:rgba(94,86,75,.95);margin-top:4px">
+            Pizza • Piće • Topli napici
           </div>
 
-          <h2>Meni i poručivanje.<br/>Brzo i jednostavno.</h2>
+          <h2>Meni sa cenama.<br/>Sve na jednom mestu.</h2>
           <p>
-            Skroluj, izaberi pizzu, dodaj u korpu i pošalji porudžbinu.
+            Ovo je samo meni za čitanje. Porudžbinu dajete konobaru.
           </p>
 
           <div class="meta">
             <span class="pill">🍕 Pizza</span>
-            <span class="pill">☕ Kafa</span>
             <span class="pill">🍺 Pivo</span>
-            <span class="pill">🥃 Kratka pića</span>
+            <span class="pill">🥃 Žestoka pića</span>
+            <span class="pill">🍷 Vina</span>
+            <span class="pill">☕ Topli napici</span>
+            <span class="pill">🥤 Sokovi</span>
           </div>
         </div>
 
@@ -500,21 +337,21 @@
               <span>Palić, Srbija</span>
             </div>
             <div class="heroStat">
-              <b>Porudžbine</b>
-              <span>Korpa → pošalji</span>
+              <b>Cene</b>
+              <span>RSD</span>
             </div>
             <div class="heroStat">
-              <b>Veličine</b>
+              <b>Veličine pizza</b>
               <span>S 22cm, L 28cm, XXL 50cm</span>
             </div>
             <div class="heroStat">
-              <b>Način</b>
-              <span>Preuzimanje / dostava (po dogovoru)</span>
+              <b>Poručivanje</b>
+              <span>Preko konobara</span>
             </div>
           </div>
           <div class="divider"></div>
-          <div class="note">
-            *Telefon, adresa i radno vreme ubacujemo kad dobiješ tačne podatke.
+          <div class="muted" style="font-size:12px">
+            *Telefon, adresa i radno vreme ubacićemo kad dobiješ tačne podatke.
           </div>
         </aside>
       </div>
@@ -526,7 +363,7 @@
         <div class="toolbar">
           <div class="left">
             <b style="letter-spacing:.12em;text-transform:uppercase;font-size:13px">Meni</b>
-            <span class="muted" style="font-size:12px">Cene su u RSD</span>
+            <span class="muted" style="font-size:12px">Pizza + dodaci</span>
           </div>
 
           <div class="right">
@@ -545,7 +382,7 @@
           <div class="card" style="background:rgba(255,255,255,.76);border-color:rgba(28,27,24,.10)">
             <div class="cardHead">
               <h3>Prilozi i dodaci</h3>
-              <span class="muted" style="font-size:12px">Dodaj uz pizzu</span>
+              <span class="muted" style="font-size:12px">Cene po veličini gde je naznačeno</span>
             </div>
             <div class="cardBody">
               <div class="menuList" id="extrasList"></div>
@@ -557,118 +394,24 @@
         </div>
       </div>
 
-      <!-- ORDER / CART -->
-      <div class="card" id="order">
+      <!-- DRINKS (REAL MENU) -->
+      <div class="card" id="drinks">
         <div class="cardHead">
-          <h3>Porudžbina</h3>
-          <span class="muted" style="font-size:12px">Korpa + slanje</span>
+          <h3>Pića</h3>
+          <span class="muted" style="font-size:12px">Preuzeto sa kartice</span>
         </div>
         <div class="cardBody">
-          <div class="cartList" id="cartList"></div>
-
-          <div style="margin-top:10px" class="totals">
-            <b>Ukupno</b>
-            <span id="total">0 RSD</span>
-          </div>
-
-          <div class="divider"></div>
-
-          <form name="pubold-order" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleSubmit(event)">
-            <input type="hidden" name="form-name" value="pubold-order" />
-            <p style="display:none">
-              <label>Don’t fill this out: <input name="bot-field" /></label>
-            </p>
-
-            <label class="muted" style="font-size:12px;display:block;margin-bottom:6px">Ime i prezime</label>
-            <input class="input" style="width:100%" name="customer_name" id="customer_name" placeholder="npr. Marko Marković" required />
-
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
-              <div>
-                <label class="muted" style="font-size:12px;display:block;margin-bottom:6px">Telefon</label>
-                <input class="input" style="width:100%" name="customer_phone" id="customer_phone" placeholder="npr. 06x xxx xxxx" required />
-              </div>
-              <div>
-                <label class="muted" style="font-size:12px;display:block;margin-bottom:6px">Način</label>
-                <select class="input" style="width:100%" name="fulfillment" id="fulfillment">
-                  <option value="Preuzimanje">Preuzimanje</option>
-                  <option value="Dostava (po dogovoru)">Dostava (po dogovoru)</option>
-                </select>
-              </div>
-            </div>
-
-            <div style="margin-top:10px">
-              <label class="muted" style="font-size:12px;display:block;margin-bottom:6px">Adresa / napomena</label>
-              <input class="input" style="width:100%" name="customer_note" id="customer_note" placeholder="Adresa (ako je dostava) + posebne napomene" />
-            </div>
-
-            <div style="margin-top:10px">
-              <label class="muted" style="font-size:12px;display:block;margin-bottom:6px">Porudžbina (auto)</label>
-              <input class="input" style="width:100%" name="order_payload" id="order_payload" readonly />
-            </div>
-
-            <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:12px">
-              <button class="btn primary" type="submit">Pošalji</button>
-              <button class="btn" type="button" onclick="sendMailto()">Pošalji mail (fallback)</button>
-              <button class="btn danger" type="button" onclick="clearCart()">Isprazni korpu</button>
-              <button class="btn" type="button" onclick="openSummary()">Pregled</button>
-            </div>
-
-            <p class="note">
-              Netlify: “Pošalji” ide kao form submission (može na email kroz notifications).
-              Ako nije Netlify: koristi “Pošalji mail (fallback)”.
-            </p>
-          </form>
-
-          <div class="divider"></div>
-
-          <div class="card" style="background:rgba(255,255,255,.76);border-color:rgba(28,27,24,.10)">
-            <div class="cardHead">
-              <h3>Pića</h3>
-              <span class="muted" style="font-size:12px">Placeholder (dopuni tačnim cenama)</span>
-            </div>
-            <div class="cardBody">
-              <div class="menuList" id="drinksList"></div>
-              <p class="muted" style="margin:10px 0 0;font-size:12px">
-                Pića su trenutno primeri da bi stranica bila kompletna. Ubaciš stvarne stavke i cene kad dobiješ karticu.
-              </p>
-            </div>
-          </div>
-
+          <div class="menuList" id="drinksList"></div>
         </div>
       </div>
     </section>
 
     <footer>
-      <b>Pub Old • Palić</b><br/>
-      Online meni + poručivanje.<br/>
+      <b>Pub Old Palić Pizzeria</b><br/>
+      Meni sa cenama (read-only).<br/>
       <span class="muted">© 2026 • Spremno za dodavanje adrese, radnog vremena, telefona, mreža i mape.</span>
     </footer>
   </main>
-
-  <!-- Sticky bottom bar (mobile) -->
-  <div class="bottomBar" aria-label="Korpa (mobilno)">
-    <div class="bottomBarInner">
-      <div>
-        <div class="bottomTotal" id="bottomTotal">0 RSD</div>
-        <div class="bottomHint" id="bottomHint">Korpa</div>
-      </div>
-      <button class="btn primary" type="button" onclick="goToOrder()">Idi na porudžbinu</button>
-    </div>
-  </div>
-
-  <!-- Modal -->
-  <div class="modalBack" id="modalBack" role="dialog" aria-modal="true" aria-label="Pregled porudžbine">
-    <div class="modal">
-      <div class="modalHead">
-        <h3>Pregled porudžbine</h3>
-        <button class="btn" type="button" onclick="closeModal()">Zatvori</button>
-      </div>
-      <div class="modalBody">
-        <pre id="summaryText"></pre>
-        <div class="note">Ovo je tekst koji ide u “order_payload” i u email (fallback).</div>
-      </div>
-    </div>
-  </div>
 
   <script>
     // ===== MENU DATA =====
@@ -678,7 +421,6 @@
       { key: "XXL", label: "XXL (50cm)" }
     ];
 
-    // ✅ Videos removed completely (mobile-friendly, faster, no trays)
     const pizzas = [
       { id:"brot", name:"Pizza Brot", desc:"aromatični kečap, začini", tags:[], price:{ S:null, L:400, XXL:null } },
       { id:"brotbeli", name:"Pizza Brot Beli", desc:"pavlaka, začini", tags:[], price:{ S:null, L:450, XXL:null } },
@@ -719,52 +461,129 @@
       { id:"kecap", name:"Kečap (2 dcl)", desc:"", bySize:{ S:50, L:50, XXL:50 } }
     ];
 
-    const drinks = [
-      { group:"Bezalkoholno", items:[
-        { name:"Coca-Cola / Fanta / Sprite", price:"—" },
-        { name:"Ledeni čaj", price:"—" },
-        { name:"Voda (gazirana / negazirana)", price:"—" },
-        { name:"Sokovi (narandža, jabuka…)", price:"—" },
-      ]},
-      { group:"Kafa", items:[
-        { name:"Espresso", price:"—" },
-        { name:"Espresso sa mlekom", price:"—" },
-        { name:"Cappuccino", price:"—" },
-        { name:"Latte", price:"—" },
-      ]},
-      { group:"Pivo (flaša / točeno)", items:[
-        { name:"Lokalno pivo 1", price:"—" },
-        { name:"Lokalno pivo 2", price:"—" },
-        { name:"Točeno pivo", price:"—" },
-        { name:"Craft (opciono)", price:"—" },
-      ]},
-      { group:"Kratka pića (12 mesta)", items:[
-        { name:"Vodka", price:"—" }, { name:"Whiskey", price:"—" }, { name:"Rakija", price:"—" },
-        { name:"Gin", price:"—" }, { name:"Rum", price:"—" }, { name:"Tequila", price:"—" },
-        { name:"Vermut", price:"—" }, { name:"Pelinkovac", price:"—" }, { name:"Jäger", price:"—" },
-        { name:"Konjak", price:"—" }, { name:"Likeri", price:"—" }, { name:"Aperitiv", price:"—" },
-      ]}
+    // ===== DRINKS DATA (FROM YOUR PHOTO) =====
+    const drinksSections = [
+      {
+        group: "Piva",
+        items: [
+          { name:"Jelen Točeno", vol:"0.5", price:250 },
+          { name:"Jelen Točeno", vol:"0.3", price:190 },
+          { name:"Jelen", vol:"0.5", price:200 },
+          { name:"Jelen", vol:"0.33", price:220 },
+          { name:"Staropramen Točeno", vol:"0.3", price:210 },
+          { name:"Staropramen Točeno", vol:"0.5", price:270 },
+          { name:"Staropramen", vol:"0.33", price:240 },
+          { name:"Nikšićko Svetlo", vol:"0.33", price:240 },
+          { name:"Stella Artois", vol:"0.33", price:290 },
+          { name:"Nikšićko Tamno", vol:"0.33", price:240 },
+          { name:"Bavaria", vol:"0.25", price:220 },
+          { name:"Hoegaarden Točeno", vol:"0.3", price:350 },
+          { name:"Hoegaarden Točeno", vol:"0.5", price:450 },
+          { name:"Corona Extra", vol:"0.35", price:390 },
+          { name:"Aspall Cyder", vol:"0.33", price:260 }
+        ]
+      },
+      {
+        group: "Žestoka pića",
+        items: [
+          { name:"Tequila Camino", vol:"0.03", price:240 },
+          { name:"Metaxa", vol:"0.03", price:240 },
+          { name:"Jack Daniels", vol:"0.03", price:300 },
+          { name:"Ballantines", vol:"0.03", price:280 },
+          { name:"Stock", vol:"0.03", price:190 },
+          { name:"Finlandia", vol:"0.03", price:210 },
+          { name:"Martini Bianco", vol:"0.05", price:200 },
+          { name:"Vermouth", vol:"0.05", price:170 },
+          { name:"Baileys", vol:"0.05", price:210 },
+          { name:"Campari", vol:"0.03", price:200 },
+          { name:"Jägermeister", vol:"0.03", price:260 },
+          { name:"Gorki List", vol:"0.05", price:200 },
+          { name:"Rum", vol:"0.05", price:180 },
+          { name:"Vinjak", vol:"0.05", price:200 },
+          { name:"Zlatna Viljamovka", vol:"0.05", price:290 },
+          { name:"Zlatna Kajsija", vol:"0.05", price:290 },
+          { name:"Zlatna Dunja", vol:"0.05", price:290 },
+          { name:"Gin Bombay Sapphire", vol:"0.03", price:210 }
+        ]
+      },
+      {
+        group: "Vina",
+        items: [
+          { name:"Sangria", vol:"0.1", price:130 },
+          { name:"Sangria", vol:"0.2", price:260 },
+          { name:"Ždrepčeva Krv", vol:"0.1", price:130 },
+          { name:"Ždrepčeva Krv", vol:"0.2", price:260 },
+          { name:"Vranac", vol:"0.1", price:130 },
+          { name:"Vranac", vol:"0.2", price:260 },
+          { name:"Rizling", vol:"0.1", price:130 },
+          { name:"Rizling", vol:"0.2", price:260 },
+          { name:"Rose", vol:"0.1", price:130 },
+          { name:"Rose", vol:"0.2", price:260 }
+        ]
+      },
+      {
+        group: "Topli napici",
+        items: [
+          { name:"Espresso", vol:"10g", price:180 },
+          { name:"Espresso sa mlekom", vol:"10g", price:200 },
+          { name:"Domaća kafa", vol:"10g", price:160 },
+          { name:"Domaća kafa sa mlekom", vol:"10g", price:180 },
+          { name:"Nescafe", vol:"10g", price:170 },
+          { name:"Nescafe sa mlekom", vol:"10g", price:210 },
+          { name:"Topla čokolada", vol:"25g", price:250 },
+          { name:"Čaj", vol:"15g", price:160 },
+          { name:"Med", vol:"15g", price:50 },
+          { name:"Kuvano vino - Ždrepčeva Krv", vol:"0.2", price:260 },
+          { name:"Kuvano vino - Rizling", vol:"0.2", price:260 }
+        ]
+      },
+      {
+        group: "Sokovi negazirani",
+        items: [
+          { name:"Next Jabuka", vol:"0.2", price:240 },
+          { name:"Next Borovnica", vol:"0.2", price:240 },
+          { name:"Next Narandža", vol:"0.2", price:240 },
+          { name:"Next Breskva", vol:"0.2", price:240 },
+          { name:"Next Jagoda", vol:"0.2", price:240 },
+          { name:"Limunada", vol:"0.2", price:180 },
+          { name:"Limunada", vol:"0.3", price:240 },
+          { name:"Limunada", vol:"0.5", price:290 },
+          { name:"Fuze - ledeni čaj (breskva)", vol:"0.25", price:240 },
+          { name:"Prirodni sok od jabuke", vol:"0.1", price:70 }
+        ]
+      },
+      {
+        group: "Sokovi gazirani",
+        items: [
+          { name:"Coca-Cola", vol:"0.25", price:240 },
+          { name:"Coca-Cola Zero", vol:"0.25", price:240 },
+          { name:"Coca-Cola Limeta", vol:"0.25", price:240 },
+          { name:"Schweppes", vol:"0.25", price:240 },
+          { name:"Fanta", vol:"0.25", price:240 },
+          { name:"Sprite", vol:"0.25", price:240 },
+          { name:"Cockta", vol:"0.275", price:240 },
+          { name:"Ultra Energy", vol:"0.25", price:230 },
+          { name:"Cedevita", vol:"0.25", price:210 },
+          { name:"Hell", vol:"0.25", price:230 }
+        ]
+      },
+      {
+        group: "Mineralna voda",
+        items: [
+          { name:"Voda Rosa (negazirano)", vol:"0.33", price:180 },
+          { name:"Voda Rosa (gazirano)", vol:"0.33", price:180 },
+          { name:"Soda voda", vol:"0.2", price:40 },
+          { name:"Romerquelle", vol:"0.33", price:180 }
+        ]
+      }
     ];
 
     // ===== STATE =====
     let filter = "all";
-    let cart = [];
 
     function fmtRSD(n){
       if (n === null || n === undefined) return "—";
       return new Intl.NumberFormat("sr-RS").format(n) + " RSD";
-    }
-
-    function goToOrder(){
-      document.getElementById('order').scrollIntoView({behavior:'smooth'});
-    }
-
-    function updateBottomBar(){
-      const total = cart.reduce((s, c) => s + c.total, 0);
-      const count = cart.reduce((s, c) => s + c.qty, 0);
-
-      document.getElementById("bottomTotal").textContent = fmtRSD(total);
-      document.getElementById("bottomHint").textContent = count ? `Stavki u korpi: ${count}` : "Korpa je prazna";
     }
 
     function renderMenu(){
@@ -788,13 +607,6 @@
           <div>
             <h4>${p.name}</h4>
             <p>${p.desc ? "(" + p.desc + ")" : ""}</p>
-            <div class="addToCartRow">
-              <select class="input" aria-label="Veličina" id="size_${p.id}">
-                ${sizes.map(s => `<option value="${s.key}">${s.label}</option>`).join("")}
-              </select>
-              <input class="input qty" aria-label="Količina" id="qty_${p.id}" type="number" min="1" step="1" value="1" />
-              <button class="btn primary" type="button" onclick="addPizza('${p.id}')">Dodaj</button>
-            </div>
           </div>
         `;
 
@@ -837,13 +649,6 @@
         left.innerHTML = `
           <h4>${x.name}</h4>
           <p>${x.desc || ""}</p>
-          <div class="addToCartRow">
-            <select class="input" aria-label="Veličina" id="xsize_${x.id}">
-              ${sizes.map(s => `<option value="${s.key}">${s.label}</option>`).join("")}
-            </select>
-            <input class="input qty" aria-label="Količina" id="xqty_${x.id}" type="number" min="1" step="1" value="1" />
-            <button class="btn primary" type="button" onclick="addExtra('${x.id}')">Dodaj</button>
-          </div>
         `;
 
         const right = document.createElement("div");
@@ -872,7 +677,7 @@
       const list = document.getElementById("drinksList");
       list.innerHTML = "";
 
-      drinks.forEach(section => {
+      drinksSections.forEach(section => {
         const block = document.createElement("div");
         block.className = "card";
         block.style.background = "rgba(255,255,255,.76)";
@@ -880,14 +685,15 @@
 
         const head = document.createElement("div");
         head.className = "cardHead";
-        head.innerHTML = `<h3>${section.group}</h3><span class="muted" style="font-size:12px">—</span>`;
+        head.innerHTML = `<h3>${section.group}</h3><span class="muted" style="font-size:12px">Cene u RSD</span>`;
 
         const body = document.createElement("div");
         body.className = "cardBody";
         body.innerHTML = section.items.map(i => `
-          <div style="display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid rgba(28,27,24,.08);padding:10px 0">
+          <div class="drinkRow">
             <span>${i.name}</span>
-            <span class="muted" style="font-variant-numeric:tabular-nums">${i.price}</span>
+            <span class="vol">${i.vol}</span>
+            <span class="pr">${fmtRSD(i.price)}</span>
           </div>
         `).join("");
 
@@ -897,77 +703,6 @@
       });
     }
 
-    function renderCart(){
-      const list = document.getElementById("cartList");
-      list.innerHTML = "";
-
-      if (!cart.length){
-        const empty = document.createElement("div");
-        empty.className = "muted";
-        empty.textContent = "Korpa je prazna.";
-        list.appendChild(empty);
-      } else {
-        cart.forEach((c, idx) => {
-          const el = document.createElement("div");
-          el.className = "cartItem";
-          el.innerHTML = `
-            <div>
-              <b>${c.name}</b>
-              <div class="small">Veličina: ${c.size} • Kom: ${c.qty}</div>
-              ${c.note ? `<div class="small">Napomena: ${escapeHtml(c.note)}</div>` : ``}
-            </div>
-            <div class="right">
-              <b>${fmtRSD(c.total)}</b>
-              <div class="small">${fmtRSD(c.unit)} / kom</div>
-              <button class="rm" type="button" onclick="removeCart(${idx})">Ukloni</button>
-            </div>
-          `;
-          list.appendChild(el);
-        });
-      }
-
-      const total = cart.reduce((s, c) => s + c.total, 0);
-      document.getElementById("total").textContent = fmtRSD(total);
-      document.getElementById("order_payload").value = buildOrderText();
-      updateBottomBar();
-    }
-
-    function addPizza(id){
-      const p = pizzas.find(x => x.id === id);
-      const size = document.getElementById("size_" + id).value;
-      const qty = Math.max(1, parseInt(document.getElementById("qty_" + id).value || "1", 10));
-      const unit = p.price[size];
-
-      if (unit === null || unit === undefined){
-        alert("Ova veličina nema cenu za " + p.name + ". Izaberi drugu veličinu.");
-        return;
-      }
-
-      cart.push({ type:"pizza", id, name:p.name, size, qty, unit, total: unit * qty });
-      renderCart();
-    }
-
-    function addExtra(id){
-      const x = extras.find(e => e.id === id);
-      const size = document.getElementById("xsize_" + id).value;
-      const qty = Math.max(1, parseInt(document.getElementById("xqty_" + id).value || "1", 10));
-
-      let unit = null;
-      if (typeof x.fixed === "number") unit = x.fixed;
-      else unit = x.bySize?.[size];
-
-      if (unit === null || unit === undefined){
-        alert("Nema cene za ovaj dodatak u izabranoj veličini.");
-        return;
-      }
-
-      cart.push({ type:"extra", id, name:x.name, size, qty, unit, total: unit * qty });
-      renderCart();
-    }
-
-    function removeCart(idx){ cart.splice(idx, 1); renderCart(); }
-    function clearCart(){ cart = []; renderCart(); }
-
     function setFilter(f, el){
       filter = f;
       document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
@@ -975,78 +710,11 @@
       renderMenu();
     }
 
-    function buildOrderText(){
-      const name = (document.getElementById("customer_name")?.value || "").trim();
-      const phone = (document.getElementById("customer_phone")?.value || "").trim();
-      const fulfill = document.getElementById("fulfillment")?.value || "—";
-      const note = (document.getElementById("customer_note")?.value || "").trim();
-
-      const lines = [];
-      lines.push("PUB OLD • PALIĆ • PORUDŽBINA");
-      lines.push("================================");
-      if (name) lines.push("Kupac: " + name);
-      if (phone) lines.push("Telefon: " + phone);
-      lines.push("Način: " + fulfill);
-      if (note) lines.push("Napomena: " + note);
-      lines.push("--------------------------------");
-
-      if (!cart.length){
-        lines.push("(Korpa prazna)");
-      } else {
-        cart.forEach((c, i) => lines.push(`${i+1}. ${c.name} • ${c.size} • x${c.qty} • ${fmtRSD(c.total)}`));
-      }
-
-      lines.push("--------------------------------");
-      const total = cart.reduce((s, c) => s + c.total, 0);
-      lines.push("UKUPNO: " + fmtRSD(total));
-      lines.push("================================");
-      lines.push("Vreme: " + new Date().toLocaleString("sr-RS"));
-
-      return lines.join("\n");
-    }
-
-    function openSummary(){
-      document.getElementById("summaryText").textContent = buildOrderText();
-      document.getElementById("modalBack").style.display = "flex";
-    }
-    function closeModal(){ document.getElementById("modalBack").style.display = "none"; }
-
-    function sendMailto(){
-      if (!cart.length){ alert("Korpa je prazna."); return; }
-      const kitchenEmail = "kitchen@pubold.rs"; // TODO
-      const subject = encodeURIComponent("Pub Old • Porudžbina");
-      const body = encodeURIComponent(buildOrderText());
-      window.location.href = `mailto:${kitchenEmail}?subject=${subject}&body=${body}`;
-    }
-
-    function handleSubmit(e){
-      if (!cart.length){
-        e.preventDefault();
-        alert("Korpa je prazna.");
-        return false;
-      }
-      document.getElementById("order_payload").value = buildOrderText();
-      return true;
-    }
-
-    function escapeHtml(str){
-      return (str || "").replace(/[&<>"']/g, (m) => ({
-        "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"
-      }[m]));
-    }
-
     // ===== INIT =====
     document.getElementById("search").addEventListener("input", () => renderMenu());
-
     renderMenu();
     renderExtras();
     renderDrinks();
-    renderCart();
-
-    document.getElementById("modalBack").addEventListener("click", (e) => {
-      if (e.target.id === "modalBack") closeModal();
-    });
   </script>
 </body>
 </html>
-
