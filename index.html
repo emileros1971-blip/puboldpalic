@@ -1,150 +1,815 @@
 <!doctype html>
 <html lang="sr-Latn">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pub Old Palić Pizzeria – Meni</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#1b120b" />
+  <title>Pub Old Palić Pizzeria • Meni</title>
+  <meta name="description" content="Pub Old Palić Pizzeria • Meni sa cenama (pizza + pića)" />
 
-<style>
-:root{
---bg:#1b120d;
---panel:#2a1b12;
---panel2:#3a261a;
---accent:#d4a04a;
---text:#f5e8d2;
---muted:#cbb79a;
---radius:18px;
---shadow:0 10px 25px rgba(0,0,0,.4);
-}
+  <style>
+    :root{
+      /* Dark warm (brown / brown-yellow / pleasant) */
+      --bg: #0f0a06;
+      --bg2:#1b120b;
+      --panel:#20150d;
+      --panel2:#2a1c12;
+      --text:#fff3df;
+      --muted:#d7c3a2;
 
-body{
-margin:0;
-font-family:system-ui,Arial,sans-serif;
-background:linear-gradient(180deg,#1b120d,#2b1b12);
-color:var(--text);
-}
+      --accent:#ffb020;   /* warm yellow */
+      --accent2:#e6452f;  /* subtle red */
+      --line: rgba(255,243,223,.10);
+      --shadow: 0 18px 46px rgba(0,0,0,.45);
 
-.wrap{max-width:1100px;margin:auto;padding:18px}
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1120px;
+      --font: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", Arial, sans-serif;
+    }
 
-.topbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:12px;
-padding:14px;
-background:#2a1b12;
-box-shadow:var(--shadow);
-border-radius:var(--radius);
-flex-wrap:wrap;
-}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      line-height:1.45;
+      background:
+        radial-gradient(1000px 620px at 12% -10%, rgba(255,176,32,.22), transparent 55%),
+        radial-gradient(900px 520px at 95% 18%, rgba(230,69,47,.12), transparent 55%),
+        radial-gradient(900px 520px at 50% 110%, rgba(255,243,223,.08), transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    }
 
-.title{
-font-size:20px;
-font-weight:900;
-letter-spacing:.08em;
-}
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px 16px 48px;}
 
-.phone{
-font-size:22px;
-font-weight:900;
-color:var(--accent);
-text-decoration:none;
-}
+    /* Sticky top bar */
+    .topbar{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:14px;
+      position:sticky; top:0; z-index:30;
+      background:rgba(15,10,6,.82);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+      padding:12px 12px;
+    }
 
-.address{
-font-size:13px;
-color:var(--muted);
-width:100%;
-}
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width:0;
+    }
 
-.section{
-margin-top:18px;
-background:var(--panel);
-padding:16px;
-border-radius:var(--radius);
-box-shadow:var(--shadow);
-}
+    /* No logo images (as requested). Simple mark. */
+    .mark{
+      width:44px; height:44px;
+      border-radius:14px;
+      display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(135deg, rgba(255,176,32,.22), rgba(230,69,47,.10));
+      border:1px solid rgba(255,243,223,.14);
+      box-shadow: 0 10px 22px rgba(0,0,0,.35);
+      font-weight:950;
+      letter-spacing:.08em;
+      flex:0 0 auto;
+      color:var(--text);
+    }
 
-h2{
-margin:0 0 12px;
-color:var(--accent);
-letter-spacing:.1em;
-text-transform:uppercase;
-font-size:15px;
-}
+    .brand h1{
+      margin:0;
+      font-size:14px;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+    .brand .sub{
+      margin:2px 0 0;
+      font-size:12px;
+      color:var(--muted);
+    }
+    .brand .addr{
+      margin:4px 0 0;
+      font-size:12px;
+      color:rgba(255,243,223,.78);
+      line-height:1.25;
+    }
 
-.item{
-display:flex;
-justify-content:space-between;
-border-bottom:1px solid rgba(255,255,255,.08);
-padding:8px 0;
-gap:10px;
-}
+    .actions{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:8px;
+      flex:0 0 auto;
+      min-width: 180px;
+    }
 
-.price{color:var(--accent);font-weight:800}
+    .phoneBig{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:16px;
+      border:1px solid rgba(255,176,32,.35);
+      background:
+        radial-gradient(120% 140% at 20% 0%, rgba(255,176,32,.22), transparent 52%),
+        rgba(255,243,223,.04);
+      box-shadow: 0 14px 28px rgba(0,0,0,.35);
+      font-weight:950;
+      letter-spacing:.02em;
+      font-size:14px;
+      white-space:nowrap;
+    }
+    .phoneBig span{
+      color:rgba(255,243,223,.78);
+      font-weight:800;
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
 
-.footer{
-margin-top:20px;
-text-align:center;
-font-size:12px;
-color:var(--muted);
-}
-</style>
+    .pill{
+      font-size:12px;
+      color:rgba(255,243,223,.78);
+      border:1px solid rgba(255,243,223,.12);
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(255,243,223,.04);
+      display:inline-flex; align-items:center; gap:8px;
+      box-shadow: 0 10px 18px rgba(0,0,0,.25);
+      white-space:nowrap;
+    }
+
+    .btn{
+      appearance:none;
+      border:1px solid rgba(255,243,223,.14);
+      background: rgba(255,243,223,.04);
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:14px;
+      cursor:pointer;
+      font-weight:900;
+      font-size:13px;
+      letter-spacing:.02em;
+      box-shadow: 0 12px 22px rgba(0,0,0,.28);
+      display:inline-flex; align-items:center; gap:8px;
+      touch-action: manipulation;
+    }
+    .btn:hover{transform: translateY(-1px); transition: .15s ease;}
+    .btn.primary{
+      border-color: rgba(255,176,32,.35);
+      background:
+        radial-gradient(120% 140% at 20% 0%, rgba(255,176,32,.20), transparent 52%),
+        rgba(255,243,223,.04);
+    }
+
+    /* Hero */
+    .hero{
+      margin-top:14px;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,243,223,.12);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      background:
+        radial-gradient(1200px 520px at 20% 10%, rgba(255,176,32,.14), transparent 60%),
+        radial-gradient(900px 500px at 90% 25%, rgba(230,69,47,.10), transparent 60%),
+        linear-gradient(145deg, rgba(32,21,13,.92), rgba(42,28,18,.92));
+      position:relative;
+    }
+    .heroInner{
+      padding:20px 16px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+    }
+    .hero h2{
+      margin:0 0 10px;
+      font-size:30px;
+      letter-spacing:.01em;
+      line-height:1.12;
+    }
+    .hero p{margin:0; color:rgba(255,243,223,.78); max-width:62ch}
+
+    .hero .meta{margin-top:12px; display:flex; flex-wrap:wrap; gap:10px;}
+
+    .heroCard{
+      background: rgba(255,243,223,.04);
+      border:1px solid rgba(255,243,223,.12);
+      border-radius: var(--radius);
+      padding:14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-height:100%;
+      box-shadow: 0 12px 26px rgba(0,0,0,.35);
+    }
+    .heroCard h3{
+      margin:0;
+      font-size:13px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:rgba(255,243,223,.92);
+    }
+
+    .heroGrid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:8px;
+    }
+    .heroStat{
+      border:1px dashed rgba(255,243,223,.18);
+      border-radius:16px;
+      padding:10px;
+      background:rgba(255,243,223,.03);
+    }
+    .heroStat b{display:block; font-size:13px}
+    .heroStat span{font-size:12px; color:rgba(255,243,223,.72)}
+
+    /* Sections */
+    .section{margin-top:14px; display:grid; grid-template-columns: 1fr; gap:14px;}
+
+    .card{
+      background: rgba(255,243,223,.04);
+      border:1px solid rgba(255,243,223,.12);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .cardHead{
+      padding:14px 14px 0;
+      display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:10px;
+    }
+    .cardHead h3{
+      margin:0;
+      font-size:13px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .cardBody{padding:14px}
+    .muted{color:rgba(255,243,223,.72)}
+    .divider{height:1px; background:var(--line); margin:10px 0}
+
+    /* Toolbar */
+    .toolbar{
+      display:flex; flex-wrap:wrap; gap:10px;
+      align-items:center; justify-content:space-between;
+      padding:12px 14px;
+      border-bottom:1px solid var(--line);
+      background:rgba(255,243,223,.03);
+    }
+    .toolbar .left, .toolbar .right{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+
+    .input{
+      width:auto;
+      background:rgba(255,243,223,.04);
+      border:1px solid rgba(255,243,223,.14);
+      color:var(--text);
+      border-radius:14px;
+      padding:12px 12px;
+      font-size:14px;
+      outline:none;
+      min-height:44px;
+    }
+    .input::placeholder{color:rgba(255,243,223,.55)}
+
+    /* Search becomes full width on phone */
+    @media (max-width: 560px){
+      .topbar{padding:10px 10px}
+      .pill{display:none;}
+      .toolbar .right{width:100%}
+      #search{width:100%}
+      .actions{min-width: 0}
+      .phoneBig{font-size:15px}
+    }
+
+    .chip{
+      border:1px solid rgba(255,243,223,.14);
+      background:rgba(255,243,223,.04);
+      padding:10px 12px;
+      border-radius:999px;
+      cursor:pointer;
+      user-select:none;
+      font-weight:950;
+      font-size:13px;
+      box-shadow: 0 12px 20px rgba(0,0,0,.25);
+      min-height:40px;
+      display:inline-flex;
+      align-items:center;
+      touch-action: manipulation;
+      color:rgba(255,243,223,.88);
+    }
+    .chip.active{
+      border-color: rgba(255,176,32,.45);
+      background: rgba(255,176,32,.12);
+      color:var(--text);
+    }
+
+    /* Menu list */
+    .menuList{display:grid; grid-template-columns: 1fr; gap:10px;}
+
+    .menuItem{
+      border:1px solid rgba(255,243,223,.12);
+      border-radius:16px;
+      padding:12px;
+      background:rgba(255,243,223,.03);
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap:12px;
+      align-items:start;
+    }
+
+    @media (max-width: 560px){
+      .menuItem{ grid-template-columns:1fr; }
+      .prices{ min-width:auto; align-items:flex-start; }
+    }
+
+    .menuItem h4{margin:0; font-size:16px}
+    .menuItem p{margin:6px 0 0; font-size:13px; color:rgba(255,243,223,.70)}
+
+    .prices{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      min-width: 160px;
+      align-items:flex-end;
+    }
+    .priceRow{
+      display:flex; gap:10px; align-items:baseline;
+      font-variant-numeric: tabular-nums;
+    }
+    .priceRow .lbl{font-size:11px; color:rgba(255,243,223,.72)}
+    .priceRow .val{font-size:14px; font-weight:950}
+    .priceRow .val.na{opacity:.35; font-weight:800}
+
+    /* Drinks blocks */
+    .drinkBlock{
+      border:1px solid rgba(255,243,223,.12);
+      border-radius:16px;
+      background:rgba(255,243,223,.03);
+      overflow:hidden;
+    }
+    .drinkHead{
+      padding:12px 12px 0;
+      display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap;
+    }
+    .drinkHead b{
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      font-size:12px;
+      color:rgba(255,243,223,.92);
+    }
+    .drinkBody{padding:10px 12px 12px}
+    .drinkRow{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      border-bottom:1px solid rgba(255,243,223,.08);
+      padding:10px 0;
+      font-variant-numeric: tabular-nums;
+    }
+    .drinkRow:last-child{border-bottom:0}
+    .drinkRow .r{
+      color:rgba(255,243,223,.88);
+      font-weight:900;
+      white-space:nowrap;
+    }
+    .drinkRow .l{
+      color:rgba(255,243,223,.88);
+    }
+    .drinkRow .sub{
+      color:rgba(255,243,223,.65);
+      font-size:12px;
+      margin-left:8px;
+      white-space:nowrap;
+    }
+
+    footer{
+      margin-top:14px;
+      padding:14px;
+      border:1px solid rgba(255,243,223,.12);
+      border-radius: var(--radius);
+      background:rgba(255,243,223,.03);
+      color:rgba(255,243,223,.72);
+      font-size:12px;
+      box-shadow: 0 12px 22px rgba(0,0,0,.25);
+    }
+
+    @media (max-width: 980px){
+      .heroInner{grid-template-columns:1fr}
+      .hero h2{font-size:28px}
+    }
+  </style>
 </head>
 
 <body>
-<div class="wrap">
+  <header class="topbar">
+    <div class="brand">
+      <div class="mark" aria-hidden="true">PO</div>
+      <div style="min-width:0">
+        <h1>Pub Old Palić Pizzeria</h1>
+        <p class="sub">Meni sa cenama • Pizza + piće</p>
+        <p class="addr">Adresa: Horgoški put bb, 24413 Palić, Srbija</p>
+      </div>
+    </div>
 
-<div class="topbar">
-  <div class="title">PUB OLD PALIĆ PIZZERIA</div>
-  <a class="phone" href="tel:+38124753103">📞 +381 24 753103</a>
-  <div class="address">Horgoški put bb, 24413 Palić, Srbija</div>
-</div>
+    <div class="actions">
+      <a class="phoneBig" href="tel:+38124753103" aria-label="Pozovi Pub Old">
+        <span>Telefon</span>
+        +381 24 753103
+      </a>
+      <span class="pill" title="Veličine pizza">S 22cm • L 28cm • XXL 50cm</span>
+      <a class="btn primary" href="#menu">Pogledaj meni</a>
+    </div>
+  </header>
 
-<div class="section">
-<h2>Pizze</h2>
-<div class="item"><span>Pizza sa sirom</span><span class="price">600 / 700 / 1550</span></div>
-<div class="item"><span>Pizza sa sirom i gljivama</span><span class="price">600 / 750 / 1600</span></div>
-<div class="item"><span>Vegetariana</span><span class="price">650 / 750 / 1600</span></div>
-<div class="item"><span>Pizza sa šunkom</span><span class="price">650 / 750 / 1650</span></div>
-<div class="item"><span>Mešana</span><span class="price">700 / 800 / 1800</span></div>
-<div class="item"><span>Domaća</span><span class="price">750 / 850 / 1850</span></div>
-<div class="item"><span>Pub pizza</span><span class="price">750 / 850 / 1900</span></div>
-</div>
+  <main class="wrap">
+    <section class="hero">
+      <div class="heroInner">
+        <div>
+          <h2>Meni (read-only).<br/>Poručuješ konobaru ili telefonom.</h2>
+          <p>
+            Cene su prikazane u RSD. Za porudžbine i informacije: <b>+381 24 753103</b>.
+          </p>
 
-<div class="section">
-<h2>Piva</h2>
-<div class="item"><span>Jelen točeno 0.5</span><span class="price">250</span></div>
-<div class="item"><span>Staropramen 0.5</span><span class="price">270</span></div>
-<div class="item"><span>Stella Artois</span><span class="price">290</span></div>
-<div class="item"><span>Hoegaarden</span><span class="price">350</span></div>
-</div>
+          <div class="meta">
+            <span class="pill">🍕 Pizza</span>
+            <span class="pill">🍺 Pivo</span>
+            <span class="pill">☕ Topli napici</span>
+            <span class="pill">🥤 Sokovi</span>
+            <span class="pill">🥃 Žestoka pića</span>
+            <span class="pill">🍷 Vina</span>
+          </div>
+        </div>
 
-<div class="section">
-<h2>Topli napici</h2>
-<div class="item"><span>Espresso</span><span class="price">180</span></div>
-<div class="item"><span>Espresso sa mlekom</span><span class="price">200</span></div>
-<div class="item"><span>Domaća kafa</span><span class="price">160</span></div>
-<div class="item"><span>Topla čokolada</span><span class="price">250</span></div>
-</div>
+        <aside class="heroCard">
+          <h3>Info</h3>
+          <div class="heroGrid">
+            <div class="heroStat">
+              <b>Lokacija</b>
+              <span>Palić, Srbija</span>
+            </div>
+            <div class="heroStat">
+              <b>Telefon</b>
+              <span>+381 24 753103</span>
+            </div>
+            <div class="heroStat">
+              <b>Adresa</b>
+              <span>Horgoški put bb</span>
+            </div>
+            <div class="heroStat">
+              <b>Veličine</b>
+              <span>S 22cm, L 28cm, XXL 50cm</span>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="muted" style="font-size:12px">
+            *Ovo je digitalni meni sa cenama. Porudžbine idu preko konobara (ili telefon).
+          </div>
+        </aside>
+      </div>
+    </section>
 
-<div class="section">
-<h2>Sokovi</h2>
-<div class="item"><span>Coca-Cola / Fanta / Sprite</span><span class="price">240</span></div>
-<div class="item"><span>Schweppes</span><span class="price">240</span></div>
-<div class="item"><span>Cedevita</span><span class="price">210</span></div>
-</div>
+    <section class="section">
+      <!-- PIZZA MENU -->
+      <div class="card" id="menu">
+        <div class="toolbar">
+          <div class="left">
+            <b style="letter-spacing:.12em;text-transform:uppercase;font-size:13px">Pizza meni</b>
+            <span class="muted" style="font-size:12px">Cene su u RSD</span>
+          </div>
 
-<div class="section">
-<h2>Mineralna voda</h2>
-<div class="item"><span>Rosa gazirana / negazirana</span><span class="price">180</span></div>
-<div class="item"><span>Soda voda</span><span class="price">40</span></div>
-</div>
+          <div class="right">
+            <input class="input" id="search" placeholder="Pretraga (npr. šunka, ljuta, gljive)..." />
+            <span class="chip active" data-filter="all" onclick="setFilter('all', this)">Sve</span>
+            <span class="chip" data-filter="ljuta" onclick="setFilter('ljuta', this)">Ljuta</span>
+            <span class="chip" data-filter="morski" onclick="setFilter('morski', this)">Morski plodovi</span>
+          </div>
+        </div>
 
-<div class="footer">
-Web održava: <b>www.silverado.pro</b>
-</div>
+        <div class="cardBody">
+          <div class="menuList" id="menuList"></div>
 
-</div>
+          <div class="divider"></div>
+
+          <div class="card" style="background:rgba(255,243,223,.03);border-color:rgba(255,243,223,.12)">
+            <div class="cardHead">
+              <h3>Prilozi i dodaci</h3>
+              <span class="muted" style="font-size:12px">Uz pizzu</span>
+            </div>
+            <div class="cardBody">
+              <div class="menuList" id="extrasList"></div>
+              <p class="muted" style="margin:10px 0 0;font-size:12px">
+                Napomena: Cene dodataka imaju različite iznose po veličini (S/L/XXL) tamo gde je naznačeno.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DRINKS MENU (REAL DATA FROM PHOTO) -->
+      <div class="card" id="drinks">
+        <div class="cardHead">
+          <h3>Pića</h3>
+          <span class="muted" style="font-size:12px">Preuzeto sa kartice (RSD)</span>
+        </div>
+        <div class="cardBody">
+          <div class="menuList" id="drinksList"></div>
+        </div>
+      </div>
+
+      <footer>
+        <b>Pub Old Palić Pizzeria</b><br/>
+        Adresa: Horgoški put bb, 24413 Palić, Srbija • Telefon: <a href="tel:+38124753103">+381 24 753103</a><br/>
+        <span class="muted">© 2026 • Održavanje sajta i ažuriranje informacija: <a href="https://www.silverado.pro" target="_blank" rel="noopener">www.silverado.pro</a></span>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    // ===== MENU DATA =====
+    const sizes = [
+      { key: "S", label: "S (22cm)" },
+      { key: "L", label: "L (28cm)" },
+      { key: "XXL", label: "XXL (50cm)" }
+    ];
+
+    const pizzas = [
+      { id:"brot", name:"Pizza Brot", desc:"aromatični kečap, začini", tags:[], price:{ S:null, L:400, XXL:null } },
+      { id:"brotbeli", name:"Pizza Brot Beli", desc:"pavlaka, začini", tags:[], price:{ S:null, L:450, XXL:null } },
+
+      { id:"sir", name:"Pizza sa Sirom", desc:"kečap, sir", tags:[], price:{ S:600, L:700, XXL:1550 } },
+      { id:"sirglj", name:"Pizza sa Sirom i Gljivama", desc:"kečap, sir, gljive", tags:[], price:{ S:600, L:750, XXL:1600 } },
+      { id:"veg", name:"Pizza Vegetariana", desc:"kečap, sir, gljive, kukuruz", tags:[], price:{ S:650, L:750, XXL:1600 } },
+      { id:"sunk", name:"Pizza sa Šunkom", desc:"kečap, šunka, sir", tags:[], price:{ S:650, L:750, XXL:1650 } },
+      { id:"kukur", name:"Pizza sa Kukuruzom", desc:"kečap, šunka, sir, kukuruz", tags:[], price:{ S:700, L:800, XXL:1800 } },
+      { id:"glj", name:"Pizza sa Gljivama", desc:"kečap, šunka, sir, gljive", tags:[], price:{ S:700, L:800, XXL:1800 } },
+      { id:"mes", name:"Pizza Mešana", desc:"kečap, šunka, sir, gljive, paprika", tags:[], price:{ S:700, L:800, XXL:1800 } },
+
+      { id:"domaca", name:"Pizza Domaća", desc:"kečap, šunka, sir, kobasica, paprika, jaje", tags:[], price:{ S:750, L:850, XXL:1850 } },
+      { id:"pub", name:"Pizza Pub", desc:"kečap, šunka, sir, luk, kobasica, slanina, jaje", tags:[], price:{ S:750, L:850, XXL:1900 } },
+
+      { id:"chief", name:"Pizza Ala Chief (Ljuta)", desc:"kečap, šunka, sir, luk, paprika, pavlaka", tags:["ljuta"], price:{ S:700, L:800, XXL:1800 } },
+      { id:"mexico", name:"Pizza Mexico (Ljuta)", desc:"kečap, šunka, sir, pasulj, kukuruz", tags:["ljuta"], price:{ S:700, L:800, XXL:1800 } },
+      { id:"acapulco", name:"Pizza Acapulco (Ljuta)", desc:"kečap, šunka, sir, gljive, kukuruz, pavlaka", tags:["ljuta"], price:{ S:700, L:800, XXL:1800 } },
+      { id:"salvatore", name:"Pizza Salvatore (Ljuta)", desc:"kečap, šunka, sir, gljive, masline, beli luk", tags:["ljuta"], price:{ S:700, L:800, XXL:1800 } },
+
+      { id:"hawaii", name:"Pizza Hawaii", desc:"pavlaka, šunka, sir, ananas", tags:[], price:{ S:700, L:800, XXL:1800 } },
+      { id:"sardine", name:"Pizza sa Sardinama", desc:"kečap, šunka, sir, sardine", tags:["morski"], price:{ S:700, L:800, XXL:1800 } },
+      { id:"skoljke", name:"Pizza sa Školjkama", desc:"kečap, šunka, sir, školjke", tags:["morski"], price:{ S:750, L:850, XXL:1900 } },
+      { id:"delikates", name:"Pizza Delikates", desc:"kečap, šunka, sir, gljive, školjke", tags:["morski"], price:{ S:750, L:850, XXL:1900 } },
+      { id:"tunjevina", name:"Pizza sa Tunjevinom", desc:"kečap, sir, tunjevina, masline", tags:["morski"], price:{ S:750, L:850, XXL:1900 } },
+
+      { id:"atlantic", name:"Pizza Atlantic", desc:"kečap, sir, sardine, masline, školjke", tags:["morski"], price:{ S:800, L:900, XXL:1950 } },
+      { id:"4god", name:"Pizza 4 Godišnja Doba", desc:"kečap, šunka, sir, gljive, kobasica, masline, školjke", tags:["morski"], price:{ S:800, L:900, XXL:2000 } }
+    ];
+
+    const extras = [
+      { id:"por_masline", name:"Porcija masline", desc:"", fixed:250 },
+      { id:"por_ananas", name:"Porcija ananas", desc:"", fixed:250 },
+      { id:"por_feferone", name:"Porcija feferone", desc:"", fixed:250 },
+      { id:"jaje", name:"Jaje (kom)", desc:"", bySize:{ S:50, L:50, XXL:50 } },
+      { id:"dodaci_std", name:"Dodaci (masline, gljive, slanina, kobasica, pasulj, šunka, sir, ananas)", desc:"", bySize:{ S:50, L:100, XXL:150 } },
+      { id:"dodaci_morski", name:"Dodaci (sardine, školjke, tunjevina)", desc:"", bySize:{ S:100, L:150, XXL:200 } },
+      { id:"kecap", name:"Kečap (2 dcl)", desc:"", bySize:{ S:50, L:50, XXL:50 } }
+    ];
+
+    // Drinks from your photo (RSD)
+    const drinks = [
+      { group:"Piva", items:[
+        { name:"Jelen Točeno", vol:"0.5", price:250 },
+        { name:"Jelen Točeno", vol:"0.3", price:190 },
+        { name:"Jelen", vol:"0.5", price:200 },
+        { name:"Jelen", vol:"0.33", price:220 },
+        { name:"Staropramen Točeno", vol:"0.3", price:210 },
+        { name:"Staropramen Točeno", vol:"0.5", price:270 },
+        { name:"Staropramen", vol:"0.33", price:240 },
+        { name:"Nikšićko Svetlo", vol:"0.33", price:240 },
+        { name:"Stella Artois", vol:"0.33", price:290 },
+        { name:"Nikšićko Tamno", vol:"0.33", price:240 },
+        { name:"Bavaria", vol:"0.25", price:220 },
+        { name:"Hoegaarden Točeno", vol:"0.3", price:350 },
+        { name:"Hoegaarden Točeno", vol:"0.5", price:450 },
+        { name:"Corona Extra", vol:"0.35", price:390 },
+        { name:"Aspall Cyder", vol:"0.33", price:260 },
+      ]},
+
+      { group:"Topli napici", items:[
+        { name:"Espresso", vol:"10g", price:180 },
+        { name:"Espresso sa mlekom", vol:"10g", price:200 },
+        { name:"Domaća kafa", vol:"10g", price:160 },
+        { name:"Domaća kafa sa mlekom", vol:"10g", price:180 },
+        { name:"Nescafe", vol:"10g", price:170 },
+        { name:"Nescafe sa mlekom", vol:"10g", price:210 },
+        { name:"Topla čokolada", vol:"25g", price:250 },
+        { name:"Čaj", vol:"15g", price:160 },
+        { name:"Med", vol:"15g", price:50 },
+        { name:"Kuvano vino - Ždrepčeva krv", vol:"0.2", price:260 },
+        { name:"Kuvano vino - Rizling", vol:"0.2", price:260 },
+      ]},
+
+      { group:"Sokovi negazirani", items:[
+        { name:"Next Jabuka", vol:"0.2", price:240 },
+        { name:"Next Borovnica", vol:"0.2", price:240 },
+        { name:"Next Narandža", vol:"0.2", price:240 },
+        { name:"Next Breskva", vol:"0.2", price:240 },
+        { name:"Next Jagoda", vol:"0.2", price:240 },
+        { name:"Limunada", vol:"0.2", price:180 },
+        { name:"Limunada", vol:"0.3", price:240 },
+        { name:"Limunada", vol:"0.5", price:290 },
+        { name:"Fuze - Ledeni čaj (breskva)", vol:"0.25", price:240 },
+        { name:"Prirodni sok od jabuke", vol:"0.1", price:70 },
+      ]},
+
+      { group:"Sokovi gazirani", items:[
+        { name:"Coca-Cola", vol:"0.25", price:240 },
+        { name:"Coca-Cola Zero", vol:"0.25", price:240 },
+        { name:"Coca-Cola Limeta", vol:"0.25", price:240 },
+        { name:"Schweppes", vol:"0.25", price:240 },
+        { name:"Fanta", vol:"0.25", price:240 },
+        { name:"Sprite", vol:"0.25", price:240 },
+        { name:"Cockta", vol:"0.275", price:240 },
+        { name:"Ultra Energy", vol:"0.25", price:230 },
+        { name:"Cedevita", vol:"0.25", price:210 },
+        { name:"Hell", vol:"0.25", price:230 },
+      ]},
+
+      { group:"Mineralna voda", items:[
+        { name:"Voda Rosa (negazirano)", vol:"0.33", price:180 },
+        { name:"Voda Rosa (gazirano)", vol:"0.33", price:180 },
+        { name:"Soda voda", vol:"0.2", price:40 },
+        { name:"Romerquelle", vol:"0.33", price:180 },
+      ]},
+
+      { group:"Žestoka pića", items:[
+        { name:"Tequila Camino", vol:"0.03", price:240 },
+        { name:"Metaxa", vol:"0.03", price:240 },
+        { name:"Jack Daniels", vol:"0.03", price:300 },
+        { name:"Ballantines", vol:"0.03", price:280 },
+        { name:"Stock", vol:"0.03", price:190 },
+        { name:"Finlandia", vol:"0.03", price:210 },
+        { name:"Martini Bianco", vol:"0.05", price:200 },
+        { name:"Vermouth", vol:"0.05", price:170 },
+        { name:"Baileys", vol:"0.05", price:210 },
+        { name:"Campari", vol:"0.03", price:200 },
+        { name:"Jagermeister", vol:"0.03", price:260 },
+        { name:"Gorki List", vol:"0.05", price:200 },
+        { name:"Rum", vol:"0.05", price:180 },
+        { name:"Vinjak", vol:"0.05", price:200 },
+        { name:"Zlatna Viljamovka", vol:"0.05", price:290 },
+        { name:"Zlatna Kajsija", vol:"0.05", price:290 },
+        { name:"Zlatna Dunja", vol:"0.05", price:290 },
+        { name:"Gin Bombay Sapphire", vol:"0.03", price:210 },
+      ]},
+
+      { group:"Vina", items:[
+        { name:"Sangria", vol:"0.1", price:130 },
+        { name:"Sangria", vol:"0.2", price:260 },
+        { name:"Ždrepčeva krv", vol:"0.1", price:130 },
+        { name:"Ždrepčeva krv", vol:"0.2", price:260 },
+        { name:"Vranac", vol:"0.1", price:130 },
+        { name:"Vranac", vol:"0.2", price:260 },
+        { name:"Rizling", vol:"0.1", price:130 },
+        { name:"Rizling", vol:"0.2", price:260 },
+        { name:"Rose", vol:"0.1", price:130 },
+        { name:"Rose", vol:"0.2", price:260 },
+      ]},
+    ];
+
+    // ===== UI =====
+    let filter = "all";
+
+    function fmtRSD(n){
+      if (n === null || n === undefined) return "—";
+      return new Intl.NumberFormat("sr-RS").format(n) + " RSD";
+    }
+
+    function renderMenu(){
+      const q = (document.getElementById("search").value || "").trim().toLowerCase();
+      const list = document.getElementById("menuList");
+      list.innerHTML = "";
+
+      const filtered = pizzas.filter(p => {
+        const hay = (p.name + " " + (p.desc||"") + " " + (p.tags||[]).join(" ")).toLowerCase();
+        const matchQ = !q || hay.includes(q);
+        const matchF = filter === "all" || (p.tags||[]).includes(filter);
+        return matchQ && matchF;
+      });
+
+      filtered.forEach(p => {
+        const el = document.createElement("div");
+        el.className = "menuItem";
+
+        const left = document.createElement("div");
+        left.innerHTML = `
+          <div>
+            <h4>${p.name}</h4>
+            <p>${p.desc ? "(" + p.desc + ")" : ""}</p>
+          </div>
+        `;
+
+        const right = document.createElement("div");
+        right.className = "prices";
+        right.innerHTML = `
+          ${sizes.map(s => {
+            const v = p.price[s.key];
+            return `
+              <div class="priceRow">
+                <span class="lbl">${s.key}</span>
+                <span class="val ${v===null?'na':''}">${fmtRSD(v)}</span>
+              </div>`;
+          }).join("")}
+        `;
+
+        el.appendChild(left);
+        el.appendChild(right);
+        list.appendChild(el);
+      });
+
+      if (!filtered.length){
+        const empty = document.createElement("div");
+        empty.className = "muted";
+        empty.style.padding = "10px";
+        empty.textContent = "Nema rezultata.";
+        list.appendChild(empty);
+      }
+    }
+
+    function renderExtras(){
+      const list = document.getElementById("extrasList");
+      list.innerHTML = "";
+
+      extras.forEach(x => {
+        const el = document.createElement("div");
+        el.className = "menuItem";
+
+        const left = document.createElement("div");
+        left.innerHTML = `
+          <h4>${x.name}</h4>
+          <p>${x.desc || ""}</p>
+        `;
+
+        const right = document.createElement("div");
+        right.className = "prices";
+
+        if (typeof x.fixed === "number"){
+          right.innerHTML = `<div class="priceRow"><span class="lbl">Cena</span><span class="val">${fmtRSD(x.fixed)}</span></div>`;
+        } else {
+          right.innerHTML = sizes.map(s => {
+            const v = x.bySize?.[s.key] ?? null;
+            return `
+              <div class="priceRow">
+                <span class="lbl">${s.key}</span>
+                <span class="val ${v===null?'na':''}">${fmtRSD(v)}</span>
+              </div>`;
+          }).join("");
+        }
+
+        el.appendChild(left);
+        el.appendChild(right);
+        list.appendChild(el);
+      });
+    }
+
+    function renderDrinks(){
+      const list = document.getElementById("drinksList");
+      list.innerHTML = "";
+
+      drinks.forEach(section => {
+        const block = document.createElement("div");
+        block.className = "drinkBlock";
+
+        const head = document.createElement("div");
+        head.className = "drinkHead";
+        head.innerHTML = `<b>${section.group}</b><span class="muted" style="font-size:12px">RSD</span>`;
+
+        const body = document.createElement("div");
+        body.className = "drinkBody";
+        body.innerHTML = section.items.map(i => `
+          <div class="drinkRow">
+            <div class="l">
+              ${i.name}
+              ${i.vol ? `<span class="sub">${i.vol}</span>` : ``}
+            </div>
+            <div class="r">${fmtRSD(i.price)}</div>
+          </div>
+        `).join("");
+
+        block.appendChild(head);
+        block.appendChild(body);
+        list.appendChild(block);
+      });
+    }
+
+    function setFilter(f, el){
+      filter = f;
+      document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+      el.classList.add("active");
+      renderMenu();
+    }
+
+    // ===== INIT =====
+    document.getElementById("search").addEventListener("input", () => renderMenu());
+    renderMenu();
+    renderExtras();
+    renderDrinks();
+  </script>
 </body>
 </html>
