@@ -17,8 +17,9 @@
       --text:#fff3df;
       --muted:#d7c3a2;
 
-      --accent:#ffb020;   /* warm yellow */
-      --accent2:#e6452f;  /* subtle red */
+      --accent:#ffb020;     /* warm yellow */
+      --accent2:#e6452f;    /* subtle red */
+      --num:#ffd27a;        /* ✅ more yellow numbers */
       --line: rgba(255,243,223,.10);
       --shadow: 0 18px 46px rgba(0,0,0,.45);
 
@@ -336,7 +337,11 @@
       font-variant-numeric: tabular-nums;
     }
     .priceRow .lbl{font-size:11px; color:rgba(255,243,223,.72)}
-    .priceRow .val{font-size:14px; font-weight:950}
+    .priceRow .val{
+      font-size:14px;
+      font-weight:950;
+      color: var(--num); /* ✅ yellow-ish numbers */
+    }
     .priceRow .val.na{opacity:.35; font-weight:800}
 
     /* Drinks blocks */
@@ -367,8 +372,8 @@
     }
     .drinkRow:last-child{border-bottom:0}
     .drinkRow .r{
-      color:rgba(255,243,223,.88);
-      font-weight:900;
+      color: var(--num); /* ✅ yellow-ish prices */
+      font-weight:950;
       white-space:nowrap;
     }
     .drinkRow .l{
@@ -424,7 +429,8 @@
     <section class="hero">
       <div class="heroInner">
         <div>
-          <h2>Meni (read-only).<br/>Poručuješ konobaru ili telefonom.</h2>
+          <!-- ✅ Removed "read-only" wording -->
+          <h2>Meni.<br/>Poručuješ konobaru ili telefonom.</h2>
           <p>
             Cene su prikazane u RSD. Za porudžbine i informacije: <b>+381 24 753103</b>.
           </p>
@@ -461,7 +467,7 @@
           </div>
           <div class="divider"></div>
           <div class="muted" style="font-size:12px">
-            *Ovo je digitalni meni sa cenama. Porudžbine idu preko konobara (ili telefon).
+            *Digitalni meni sa cenama. Porudžbine idu preko konobara (ili telefon).
           </div>
         </aside>
       </div>
@@ -504,7 +510,7 @@
         </div>
       </div>
 
-      <!-- DRINKS MENU (REAL DATA FROM PHOTO) -->
+      <!-- DRINKS MENU -->
       <div class="card" id="drinks">
         <div class="cardHead">
           <h3>Pića</h3>
