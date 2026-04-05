@@ -9,20 +9,17 @@
 
   <style>
     :root{
-      /* Dark warm (brown / brown-yellow / pleasant) */
       --bg: #0f0a06;
       --bg2:#1b120b;
       --panel:#20150d;
       --panel2:#2a1c12;
       --text:#fff3df;
       --muted:#d7c3a2;
-
-      --accent:#ffb020;     /* warm yellow */
-      --accent2:#e6452f;    /* subtle red */
-      --num:#ffd27a;        /* ✅ more yellow numbers */
+      --accent:#ffb020;
+      --accent2:#e6452f;
+      --num:#ffd27a;
       --line: rgba(255,243,223,.10);
       --shadow: 0 18px 46px rgba(0,0,0,.45);
-
       --radius: 18px;
       --radius2: 26px;
       --max: 1120px;
@@ -56,11 +53,8 @@
       padding:12px 12px;
     }
 
-    .brand{
-      display:flex; align-items:center; gap:12px; min-width:0;
-    }
+    .brand{display:flex; align-items:center; gap:12px; min-width:0;}
 
-    /* No logo images (as requested). Simple mark. */
     .mark{
       width:44px; height:44px;
       border-radius:14px;
@@ -81,57 +75,30 @@
       text-transform:uppercase;
       white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
     }
-    .brand .sub{
-      margin:2px 0 0;
-      font-size:12px;
-      color:var(--muted);
-    }
-    .brand .addr{
-      margin:4px 0 0;
-      font-size:12px;
-      color:rgba(255,243,223,.78);
-      line-height:1.25;
-    }
+    .brand .sub{margin:2px 0 0; font-size:12px; color:var(--muted);}
+    .brand .addr{margin:4px 0 0; font-size:12px; color:rgba(255,243,223,.78); line-height:1.25;}
 
     .actions{
-      display:flex;
-      flex-direction:column;
-      align-items:flex-end;
-      gap:8px;
-      flex:0 0 auto;
-      min-width: 180px;
+      display:flex; flex-direction:column; align-items:flex-end;
+      gap:8px; flex:0 0 auto; min-width: 180px;
     }
 
     .phoneBig{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 12px;
-      border-radius:16px;
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 12px; border-radius:16px;
       border:1px solid rgba(255,176,32,.35);
       background:
         radial-gradient(120% 140% at 20% 0%, rgba(255,176,32,.22), transparent 52%),
         rgba(255,243,223,.04);
       box-shadow: 0 14px 28px rgba(0,0,0,.35);
-      font-weight:950;
-      letter-spacing:.02em;
-      font-size:14px;
-      white-space:nowrap;
+      font-weight:950; letter-spacing:.02em; font-size:14px; white-space:nowrap;
     }
-    .phoneBig span{
-      color:rgba(255,243,223,.78);
-      font-weight:800;
-      font-size:12px;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-    }
+    .phoneBig span{color:rgba(255,243,223,.78); font-weight:800; font-size:12px; letter-spacing:.08em; text-transform:uppercase;}
 
     .pill{
-      font-size:12px;
-      color:rgba(255,243,223,.78);
+      font-size:12px; color:rgba(255,243,223,.78);
       border:1px solid rgba(255,243,223,.12);
-      padding:7px 10px;
-      border-radius:999px;
+      padding:7px 10px; border-radius:999px;
       background:rgba(255,243,223,.04);
       display:inline-flex; align-items:center; gap:8px;
       box-shadow: 0 10px 18px rgba(0,0,0,.25);
@@ -143,12 +110,8 @@
       border:1px solid rgba(255,243,223,.14);
       background: rgba(255,243,223,.04);
       color:var(--text);
-      padding:10px 12px;
-      border-radius:14px;
-      cursor:pointer;
-      font-weight:900;
-      font-size:13px;
-      letter-spacing:.02em;
+      padding:10px 12px; border-radius:14px; cursor:pointer;
+      font-weight:900; font-size:13px; letter-spacing:.02em;
       box-shadow: 0 12px 22px rgba(0,0,0,.28);
       display:inline-flex; align-items:center; gap:8px;
       touch-action: manipulation;
@@ -163,64 +126,33 @@
 
     /* Hero */
     .hero{
-      margin-top:14px;
-      border-radius: var(--radius2);
+      margin-top:14px; border-radius: var(--radius2);
       border:1px solid rgba(255,243,223,.12);
-      overflow:hidden;
-      box-shadow: var(--shadow);
+      overflow:hidden; box-shadow: var(--shadow);
       background:
         radial-gradient(1200px 520px at 20% 10%, rgba(255,176,32,.14), transparent 60%),
         radial-gradient(900px 500px at 90% 25%, rgba(230,69,47,.10), transparent 60%),
         linear-gradient(145deg, rgba(32,21,13,.92), rgba(42,28,18,.92));
-      position:relative;
     }
     .heroInner{
       padding:20px 16px;
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:14px;
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:14px;
     }
-    .hero h2{
-      margin:0 0 10px;
-      font-size:30px;
-      letter-spacing:.01em;
-      line-height:1.12;
-    }
+    .hero h2{margin:0 0 10px; font-size:30px; letter-spacing:.01em; line-height:1.12;}
     .hero p{margin:0; color:rgba(255,243,223,.78); max-width:62ch}
-
     .hero .meta{margin-top:12px; display:flex; flex-wrap:wrap; gap:10px;}
 
     .heroCard{
       background: rgba(255,243,223,.04);
       border:1px solid rgba(255,243,223,.12);
-      border-radius: var(--radius);
-      padding:14px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      min-height:100%;
-      box-shadow: 0 12px 26px rgba(0,0,0,.35);
+      border-radius: var(--radius); padding:14px;
+      display:flex; flex-direction:column; gap:10px;
+      min-height:100%; box-shadow: 0 12px 26px rgba(0,0,0,.35);
     }
-    .heroCard h3{
-      margin:0;
-      font-size:13px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:rgba(255,243,223,.92);
-    }
+    .heroCard h3{margin:0; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,243,223,.92);}
 
-    .heroGrid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-      margin-top:8px;
-    }
-    .heroStat{
-      border:1px dashed rgba(255,243,223,.18);
-      border-radius:16px;
-      padding:10px;
-      background:rgba(255,243,223,.03);
-    }
+    .heroGrid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px;}
+    .heroStat{border:1px dashed rgba(255,243,223,.18); border-radius:16px; padding:10px; background:rgba(255,243,223,.03);}
     .heroStat b{display:block; font-size:13px}
     .heroStat span{font-size:12px; color:rgba(255,243,223,.72)}
 
@@ -238,12 +170,7 @@
       padding:14px 14px 0;
       display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:10px;
     }
-    .cardHead h3{
-      margin:0;
-      font-size:13px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-    }
+    .cardHead h3{margin:0; font-size:13px; letter-spacing:.12em; text-transform:uppercase;}
     .cardBody{padding:14px}
     .muted{color:rgba(255,243,223,.72)}
     .divider{height:1px; background:var(--line); margin:10px 0}
@@ -271,7 +198,6 @@
     }
     .input::placeholder{color:rgba(255,243,223,.55)}
 
-    /* Search becomes full width on phone */
     @media (max-width: 560px){
       .topbar{padding:10px 10px}
       .pill{display:none;}
@@ -284,17 +210,10 @@
     .chip{
       border:1px solid rgba(255,243,223,.14);
       background:rgba(255,243,223,.04);
-      padding:10px 12px;
-      border-radius:999px;
-      cursor:pointer;
-      user-select:none;
-      font-weight:950;
-      font-size:13px;
-      box-shadow: 0 12px 20px rgba(0,0,0,.25);
-      min-height:40px;
-      display:inline-flex;
-      align-items:center;
-      touch-action: manipulation;
+      padding:10px 12px; border-radius:999px; cursor:pointer;
+      user-select:none; font-weight:950; font-size:13px;
+      box-shadow: 0 12px 20px rgba(0,0,0,.25); min-height:40px;
+      display:inline-flex; align-items:center; touch-action: manipulation;
       color:rgba(255,243,223,.88);
     }
     .chip.active{
@@ -303,10 +222,120 @@
       color:var(--text);
     }
 
-    /* Menu list */
+    /* ===== PIZZA CARD (horizontal tray) ===== */
     .menuList{display:grid; grid-template-columns: 1fr; gap:10px;}
 
     .menuItem{
+      border:1px solid rgba(255,243,223,.12);
+      border-radius:16px;
+      background:rgba(255,243,223,.03);
+      display:grid;
+      grid-template-columns: 130px 1fr auto;
+      gap:0;
+      align-items:stretch;
+      overflow:hidden;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+    .menuItem:hover{
+      border-color: rgba(255,176,32,.30);
+      box-shadow: 0 8px 28px rgba(0,0,0,.40);
+    }
+
+    /* Image tray */
+    .menuImg{
+      width:130px;
+      flex: 0 0 130px;
+      overflow:hidden;
+      position:relative;
+      background: rgba(255,243,223,.04);
+    }
+    .menuImg img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position: center center;
+      display:block;
+      transition: transform .35s ease;
+    }
+    .menuItem:hover .menuImg img{
+      transform: scale(1.05);
+    }
+    /* Placeholder when no image */
+    .menuImg .imgPlaceholder{
+      width:100%; height:100%; min-height:100px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:28px;
+      background: linear-gradient(135deg, rgba(255,176,32,.08), rgba(230,69,47,.06));
+    }
+
+    /* Info section */
+    .menuInfo{
+      padding:14px 12px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:6px;
+      border-left:1px solid rgba(255,243,223,.08);
+    }
+    .menuInfo h4{margin:0; font-size:15px; line-height:1.25;}
+    .menuInfo p{margin:0; font-size:12px; color:rgba(255,243,223,.65);}
+    .tagRow{display:flex; flex-wrap:wrap; gap:6px; margin-top:4px;}
+    .tag{
+      font-size:10px; letter-spacing:.08em; text-transform:uppercase;
+      background:rgba(230,69,47,.15); border:1px solid rgba(230,69,47,.28);
+      color:rgba(255,160,100,.92); padding:3px 8px; border-radius:999px;
+    }
+
+    /* Prices */
+    .prices{
+      display:flex; flex-direction:column; gap:6px;
+      padding:14px 14px 14px 10px;
+      min-width:150px;
+      align-items:flex-end;
+      justify-content:center;
+      border-left:1px solid rgba(255,243,223,.08);
+    }
+    .priceRow{
+      display:flex; gap:8px; align-items:baseline;
+      font-variant-numeric: tabular-nums;
+    }
+    .priceRow .lbl{font-size:11px; color:rgba(255,243,223,.60); width:26px; text-align:right;}
+    .priceRow .val{font-size:13px; font-weight:950; color: var(--num);}
+    .priceRow .val.na{opacity:.28; font-weight:800}
+
+    /* Mobile: stack vertically */
+    @media (max-width: 640px){
+      .menuItem{
+        grid-template-columns: 100px 1fr;
+        grid-template-rows: auto auto;
+      }
+      .menuImg{
+        width:100px;
+        grid-row: 1 / 3;
+      }
+      .menuInfo{
+        grid-column: 2;
+        grid-row: 1;
+        padding:10px 10px 6px;
+      }
+      .prices{
+        grid-column: 2;
+        grid-row: 2;
+        border-left:none;
+        border-top:1px solid rgba(255,243,223,.08);
+        flex-direction:row;
+        flex-wrap:wrap;
+        align-items:center;
+        justify-content:flex-start;
+        padding:8px 10px;
+        gap:10px;
+        min-width:0;
+      }
+      .priceRow .lbl{width:auto;}
+    }
+
+    /* Extras list (no image) */
+    .extraItem{
       border:1px solid rgba(255,243,223,.12);
       border-radius:16px;
       padding:12px;
@@ -316,90 +345,66 @@
       gap:12px;
       align-items:start;
     }
+    .extraItem h4{margin:0; font-size:15px}
+    .extraItem p{margin:6px 0 0; font-size:12px; color:rgba(255,243,223,.65)}
+    .extraPrices{
+      display:flex; flex-direction:column; gap:6px;
+      min-width: 150px; align-items:flex-end;
+    }
 
     @media (max-width: 560px){
-      .menuItem{ grid-template-columns:1fr; }
-      .prices{ min-width:auto; align-items:flex-start; }
+      .extraItem{grid-template-columns:1fr; }
+      .extraPrices{min-width:auto; align-items:flex-start;}
     }
-
-    .menuItem h4{margin:0; font-size:16px}
-    .menuItem p{margin:6px 0 0; font-size:13px; color:rgba(255,243,223,.70)}
-
-    .prices{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      min-width: 160px;
-      align-items:flex-end;
-    }
-    .priceRow{
-      display:flex; gap:10px; align-items:baseline;
-      font-variant-numeric: tabular-nums;
-    }
-    .priceRow .lbl{font-size:11px; color:rgba(255,243,223,.72)}
-    .priceRow .val{
-      font-size:14px;
-      font-weight:950;
-      color: var(--num); /* ✅ yellow-ish numbers */
-    }
-    .priceRow .val.na{opacity:.35; font-weight:800}
 
     /* Drinks blocks */
     .drinkBlock{
       border:1px solid rgba(255,243,223,.12);
-      border-radius:16px;
-      background:rgba(255,243,223,.03);
-      overflow:hidden;
+      border-radius:16px; background:rgba(255,243,223,.03); overflow:hidden;
     }
     .drinkHead{
       padding:12px 12px 0;
       display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap;
     }
-    .drinkHead b{
-      letter-spacing:.10em;
-      text-transform:uppercase;
-      font-size:12px;
-      color:rgba(255,243,223,.92);
-    }
+    .drinkHead b{letter-spacing:.10em; text-transform:uppercase; font-size:12px; color:rgba(255,243,223,.92);}
     .drinkBody{padding:10px 12px 12px}
     .drinkRow{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
+      display:flex; justify-content:space-between; gap:10px;
       border-bottom:1px solid rgba(255,243,223,.08);
-      padding:10px 0;
-      font-variant-numeric: tabular-nums;
+      padding:10px 0; font-variant-numeric: tabular-nums;
     }
     .drinkRow:last-child{border-bottom:0}
-    .drinkRow .r{
-      color: var(--num); /* ✅ yellow-ish prices */
-      font-weight:950;
-      white-space:nowrap;
-    }
-    .drinkRow .l{
-      color:rgba(255,243,223,.88);
-    }
-    .drinkRow .sub{
-      color:rgba(255,243,223,.65);
-      font-size:12px;
-      margin-left:8px;
-      white-space:nowrap;
-    }
+    .drinkRow .r{color: var(--num); font-weight:950; white-space:nowrap;}
+    .drinkRow .l{color:rgba(255,243,223,.88);}
+    .drinkRow .sub{color:rgba(255,243,223,.65); font-size:12px; margin-left:8px; white-space:nowrap;}
 
     footer{
-      margin-top:14px;
-      padding:14px;
+      margin-top:14px; padding:14px;
       border:1px solid rgba(255,243,223,.12);
       border-radius: var(--radius);
       background:rgba(255,243,223,.03);
       color:rgba(255,243,223,.72);
-      font-size:12px;
-      box-shadow: 0 12px 22px rgba(0,0,0,.25);
+      font-size:12px; box-shadow: 0 12px 22px rgba(0,0,0,.25);
     }
 
     @media (max-width: 980px){
       .heroInner{grid-template-columns:1fr}
       .hero h2{font-size:28px}
+    }
+
+    /* Lightbox */
+    .lightbox{
+      display:none; position:fixed; inset:0; z-index:100;
+      background:rgba(0,0,0,.88); align-items:center; justify-content:center;
+      cursor:zoom-out;
+    }
+    .lightbox.open{display:flex;}
+    .lightbox img{
+      max-width:min(90vw,540px);
+      max-height:90vh;
+      border-radius:18px;
+      box-shadow:0 30px 80px rgba(0,0,0,.6);
+      object-fit:contain;
     }
   </style>
 </head>
@@ -407,7 +412,7 @@
 <body>
   <header class="topbar">
     <div class="brand">
-      <div class="mark" aria-hidden="true">PO</div>
+      <img src="https://raw.githubusercontent.com/YOUR_USER/YOUR_REPO/main/assets/IMG-c9d5f82ad0cd8a5179ba4bbf9b49511b-V__1_.png" alt="Pub Old Palić logo" style="width:88px;height:88px;object-fit:contain;flex:0 0 auto;" />
       <div style="min-width:0">
         <h1>Pub Old Palić Pizzeria</h1>
         <p class="sub">Meni sa cenama • Pizza + piće</p>
@@ -429,12 +434,8 @@
     <section class="hero">
       <div class="heroInner">
         <div>
-          <!-- ✅ Removed "read-only" wording -->
           <h2>Meni.<br/>Poručuješ konobaru ili telefonom.</h2>
-          <p>
-            Cene su prikazane u RSD. Za porudžbine i informacije: <b>+381 24 753103</b>.
-          </p>
-
+          <p>Cene su prikazane u RSD. Za porudžbine i informacije: <b>+381 24 753103</b>.</p>
           <div class="meta">
             <span class="pill">🍕 Pizza</span>
             <span class="pill">🍺 Pivo</span>
@@ -448,22 +449,10 @@
         <aside class="heroCard">
           <h3>Info</h3>
           <div class="heroGrid">
-            <div class="heroStat">
-              <b>Lokacija</b>
-              <span>Palić, Srbija</span>
-            </div>
-            <div class="heroStat">
-              <b>Telefon</b>
-              <span>+381 24 753103</span>
-            </div>
-            <div class="heroStat">
-              <b>Adresa</b>
-              <span>Horgoški put bb</span>
-            </div>
-            <div class="heroStat">
-              <b>Veličine</b>
-              <span>S 22cm, L 28cm, XXL 50cm</span>
-            </div>
+            <div class="heroStat"><b>Lokacija</b><span>Palić, Srbija</span></div>
+            <div class="heroStat"><b>Telefon</b><span>+381 24 753103</span></div>
+            <div class="heroStat"><b>Adresa</b><span>Horgoški put bb</span></div>
+            <div class="heroStat"><b>Veličine</b><span>S 22cm, L 28cm, XXL 50cm</span></div>
           </div>
           <div class="divider"></div>
           <div class="muted" style="font-size:12px">
@@ -481,7 +470,6 @@
             <b style="letter-spacing:.12em;text-transform:uppercase;font-size:13px">Pizza meni</b>
             <span class="muted" style="font-size:12px">Cene su u RSD</span>
           </div>
-
           <div class="right">
             <input class="input" id="search" placeholder="Pretraga (npr. šunka, ljuta, gljive)..." />
             <span class="chip active" data-filter="all" onclick="setFilter('all', this)">Sve</span>
@@ -529,7 +517,43 @@
     </section>
   </main>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="" />
+  </div>
+
   <script>
+    // ===== GITHUB ASSETS BASE URL =====
+    // Change this to your actual GitHub raw assets URL, e.g.:
+    // const IMG_BASE = "https://raw.githubusercontent.com/YOUR_USER/YOUR_REPO/main/assets/";
+    const IMG_BASE = "./";  // local fallback — works when images are in same folder
+
+    // ===== PIZZA → IMAGE FILENAME MAP =====
+    const imgMap = {
+      "brot":       "Crveni brot.png",
+      "brotbeli":   "Beli brot.png",
+      "sir":        "sa sirom.png",
+      "sirglj":     "sa sirom i gljivama.png",
+      "veg":        "1000039480.png",
+      "sunk":       "Sa sunkom.png",
+      "kukur":      "Sa kukuruzom.png",
+      "glj":        "sa gljivama.png",
+      "mes":        "Mesana.png",
+      "domaca":     "Domaca.png",
+      "pub":        "PUB.png",
+      "chief":      "A la chef.png",
+      "mexico":     "Mexico.png",
+      "acapulco":   "Acapulco.png",
+      "salvatore":  "Salvatore.png",
+      "hawaii":     "Hawaii.png",
+      "sardine":    "sardinijama.png",
+      "skoljke":    "Sa skoljkama.png",
+      "delikates":  "Delikates.png",
+      "tunjevina":  "A la Chef(1).png",
+      "atlantic":   "Atlanctic.png",
+      "4god":       "4 godisnja doba.png",
+    };
+
     // ===== MENU DATA =====
     const sizes = [
       { key: "S", label: "S (22cm)" },
@@ -538,148 +562,136 @@
     ];
 
     const pizzas = [
-      { id:"brot", name:"Pizza Brot", desc:"aromatični kečap, začini", tags:[], price:{ S:null, L:400, XXL:null } },
-      { id:"brotbeli", name:"Pizza Brot Beli", desc:"pavlaka, začini", tags:[], price:{ S:null, L:450, XXL:null } },
-
-      { id:"sir", name:"Pizza sa Sirom", desc:"kečap, sir", tags:[], price:{ S:600, L:700, XXL:1550 } },
-      { id:"sirglj", name:"Pizza sa Sirom i Gljivama", desc:"kečap, sir, gljive", tags:[], price:{ S:600, L:750, XXL:1600 } },
-      { id:"veg", name:"Pizza Vegetariana", desc:"kečap, sir, gljive, kukuruz", tags:[], price:{ S:650, L:750, XXL:1600 } },
-      { id:"sunk", name:"Pizza sa Šunkom", desc:"kečap, šunka, sir", tags:[], price:{ S:650, L:750, XXL:1650 } },
-      { id:"kukur", name:"Pizza sa Kukuruzom", desc:"kečap, šunka, sir, kukuruz", tags:[], price:{ S:700, L:800, XXL:1800 } },
-      { id:"glj", name:"Pizza sa Gljivama", desc:"kečap, šunka, sir, gljive", tags:[], price:{ S:700, L:800, XXL:1800 } },
-      { id:"mes", name:"Pizza Mešana", desc:"kečap, šunka, sir, gljive, paprika", tags:[], price:{ S:700, L:800, XXL:1800 } },
-
-      { id:"domaca", name:"Pizza Domaća", desc:"kečap, šunka, sir, kobasica, paprika, jaje", tags:[], price:{ S:750, L:850, XXL:1850 } },
-      { id:"pub", name:"Pizza Pub", desc:"kečap, šunka, sir, luk, kobasica, slanina, jaje", tags:[], price:{ S:750, L:850, XXL:1900 } },
-
-      { id:"chief", name:"Pizza Ala Chief (Ljuta)", desc:"kečap, šunka, sir, luk, paprika, pavlaka", tags:["ljuta"], price:{ S:700, L:800, XXL:1800 } },
-      { id:"mexico", name:"Pizza Mexico (Ljuta)", desc:"kečap, šunka, sir, pasulj, kukuruz", tags:["ljuta"], price:{ S:700, L:800, XXL:1800 } },
-      { id:"acapulco", name:"Pizza Acapulco (Ljuta)", desc:"kečap, šunka, sir, gljive, kukuruz, pavlaka", tags:["ljuta"], price:{ S:700, L:800, XXL:1800 } },
-      { id:"salvatore", name:"Pizza Salvatore (Ljuta)", desc:"kečap, šunka, sir, gljive, masline, beli luk", tags:["ljuta"], price:{ S:700, L:800, XXL:1800 } },
-
-      { id:"hawaii", name:"Pizza Hawaii", desc:"pavlaka, šunka, sir, ananas", tags:[], price:{ S:700, L:800, XXL:1800 } },
-      { id:"sardine", name:"Pizza sa Sardinama", desc:"kečap, šunka, sir, sardine", tags:["morski"], price:{ S:700, L:800, XXL:1800 } },
-      { id:"skoljke", name:"Pizza sa Školjkama", desc:"kečap, šunka, sir, školjke", tags:["morski"], price:{ S:750, L:850, XXL:1900 } },
-      { id:"delikates", name:"Pizza Delikates", desc:"kečap, šunka, sir, gljive, školjke", tags:["morski"], price:{ S:750, L:850, XXL:1900 } },
-      { id:"tunjevina", name:"Pizza sa Tunjevinom", desc:"kečap, sir, tunjevina, masline", tags:["morski"], price:{ S:750, L:850, XXL:1900 } },
-
-      { id:"atlantic", name:"Pizza Atlantic", desc:"kečap, sir, sardine, masline, školjke", tags:["morski"], price:{ S:800, L:900, XXL:1950 } },
-      { id:"4god", name:"Pizza 4 Godišnja Doba", desc:"kečap, šunka, sir, gljive, kobasica, masline, školjke", tags:["morski"], price:{ S:800, L:900, XXL:2000 } }
+      { id:"brot",      name:"Pizza Brot",                desc:"aromatični kečap, začini",                            tags:[],         price:{ S:null, L:400,  XXL:null } },
+      { id:"brotbeli",  name:"Pizza Brot Beli",           desc:"pavlaka, začini",                                     tags:[],         price:{ S:null, L:450,  XXL:null } },
+      { id:"sir",       name:"Pizza sa Sirom",            desc:"kečap, sir",                                          tags:[],         price:{ S:600,  L:700,  XXL:1550 } },
+      { id:"sirglj",    name:"Pizza sa Sirom i Gljivama", desc:"kečap, sir, gljive",                                  tags:[],         price:{ S:600,  L:750,  XXL:1600 } },
+      { id:"veg",       name:"Pizza Vegetariana",         desc:"kečap, sir, gljive, kukuruz",                         tags:[],         price:{ S:650,  L:750,  XXL:1600 } },
+      { id:"sunk",      name:"Pizza sa Šunkom",           desc:"kečap, šunka, sir",                                   tags:[],         price:{ S:650,  L:750,  XXL:1650 } },
+      { id:"kukur",     name:"Pizza sa Kukuruzom",        desc:"kečap, šunka, sir, kukuruz",                          tags:[],         price:{ S:700,  L:800,  XXL:1800 } },
+      { id:"glj",       name:"Pizza sa Gljivama",         desc:"kečap, šunka, sir, gljive",                           tags:[],         price:{ S:700,  L:800,  XXL:1800 } },
+      { id:"mes",       name:"Pizza Mešana",              desc:"kečap, šunka, sir, gljive, paprika",                  tags:[],         price:{ S:700,  L:800,  XXL:1800 } },
+      { id:"domaca",    name:"Pizza Domaća",              desc:"kečap, šunka, sir, kobasica, paprika, jaje",          tags:[],         price:{ S:750,  L:850,  XXL:1850 } },
+      { id:"pub",       name:"Pizza Pub",                 desc:"kečap, šunka, sir, luk, kobasica, slanina, jaje",     tags:[],         price:{ S:750,  L:850,  XXL:1900 } },
+      { id:"chief",     name:"Pizza Ala Chief (Ljuta)",   desc:"kečap, šunka, sir, luk, paprika, pavlaka",            tags:["ljuta"],  price:{ S:700,  L:800,  XXL:1800 } },
+      { id:"mexico",    name:"Pizza Mexico (Ljuta)",      desc:"kečap, šunka, sir, pasulj, kukuruz",                  tags:["ljuta"],  price:{ S:700,  L:800,  XXL:1800 } },
+      { id:"acapulco",  name:"Pizza Acapulco (Ljuta)",    desc:"kečap, šunka, sir, gljive, kukuruz, pavlaka",         tags:["ljuta"],  price:{ S:700,  L:800,  XXL:1800 } },
+      { id:"salvatore", name:"Pizza Salvatore (Ljuta)",   desc:"kečap, šunka, sir, gljive, masline, beli luk",        tags:["ljuta"],  price:{ S:700,  L:800,  XXL:1800 } },
+      { id:"hawaii",    name:"Pizza Hawaii",              desc:"pavlaka, šunka, sir, ananas",                         tags:[],         price:{ S:700,  L:800,  XXL:1800 } },
+      { id:"sardine",   name:"Pizza sa Sardinama",        desc:"kečap, šunka, sir, sardine",                          tags:["morski"], price:{ S:700,  L:800,  XXL:1800 } },
+      { id:"skoljke",   name:"Pizza sa Školjkama",        desc:"kečap, šunka, sir, školjke",                          tags:["morski"], price:{ S:750,  L:850,  XXL:1900 } },
+      { id:"delikates", name:"Pizza Delikates",           desc:"kečap, šunka, sir, gljive, školjke",                  tags:["morski"], price:{ S:750,  L:850,  XXL:1900 } },
+      { id:"tunjevina", name:"Pizza sa Tunjevinom",       desc:"kečap, sir, tunjevina, masline",                      tags:["morski"], price:{ S:750,  L:850,  XXL:1900 } },
+      { id:"atlantic",  name:"Pizza Atlantic",            desc:"kečap, sir, sardine, masline, školjke",               tags:["morski"], price:{ S:800,  L:900,  XXL:1950 } },
+      { id:"4god",      name:"Pizza 4 Godišnja Doba",     desc:"kečap, šunka, sir, gljive, kobasica, masline, školjke",tags:["morski"],price:{ S:800,  L:900,  XXL:2000 } }
     ];
 
     const extras = [
-      { id:"por_masline", name:"Porcija masline", desc:"", fixed:250 },
-      { id:"por_ananas", name:"Porcija ananas", desc:"", fixed:250 },
-      { id:"por_feferone", name:"Porcija feferone", desc:"", fixed:250 },
-      { id:"jaje", name:"Jaje (kom)", desc:"", bySize:{ S:50, L:50, XXL:50 } },
-      { id:"dodaci_std", name:"Dodaci (masline, gljive, slanina, kobasica, pasulj, šunka, sir, ananas)", desc:"", bySize:{ S:50, L:100, XXL:150 } },
-      { id:"dodaci_morski", name:"Dodaci (sardine, školjke, tunjevina)", desc:"", bySize:{ S:100, L:150, XXL:200 } },
-      { id:"kecap", name:"Kečap (2 dcl)", desc:"", bySize:{ S:50, L:50, XXL:50 } }
+      { id:"por_masline",   name:"Porcija masline",                                                                       desc:"", fixed:250 },
+      { id:"por_ananas",    name:"Porcija ananas",                                                                         desc:"", fixed:250 },
+      { id:"por_feferone",  name:"Porcija feferone",                                                                       desc:"", fixed:250 },
+      { id:"jaje",          name:"Jaje (kom)",                                                                             desc:"", bySize:{ S:50, L:50, XXL:50 } },
+      { id:"dodaci_std",    name:"Dodaci (masline, gljive, slanina, kobasica, pasulj, šunka, sir, ananas)",               desc:"", bySize:{ S:50, L:100, XXL:150 } },
+      { id:"dodaci_morski", name:"Dodaci (sardine, školjke, tunjevina)",                                                   desc:"", bySize:{ S:100, L:150, XXL:200 } },
+      { id:"kecap",         name:"Kečap (2 dcl)",                                                                         desc:"", bySize:{ S:50, L:50, XXL:50 } }
     ];
 
-    // Drinks from your photo (RSD)
     const drinks = [
       { group:"Piva", items:[
-        { name:"Jelen Točeno", vol:"0.5", price:250 },
-        { name:"Jelen Točeno", vol:"0.3", price:190 },
-        { name:"Jelen", vol:"0.5", price:200 },
-        { name:"Jelen", vol:"0.33", price:220 },
-        { name:"Staropramen Točeno", vol:"0.3", price:210 },
-        { name:"Staropramen Točeno", vol:"0.5", price:270 },
-        { name:"Staropramen", vol:"0.33", price:240 },
-        { name:"Nikšićko Svetlo", vol:"0.33", price:240 },
-        { name:"Stella Artois", vol:"0.33", price:290 },
-        { name:"Nikšićko Tamno", vol:"0.33", price:240 },
-        { name:"Bavaria", vol:"0.25", price:220 },
-        { name:"Hoegaarden Točeno", vol:"0.3", price:350 },
-        { name:"Hoegaarden Točeno", vol:"0.5", price:450 },
-        { name:"Corona Extra", vol:"0.35", price:390 },
-        { name:"Aspall Cyder", vol:"0.33", price:260 },
+        { name:"Jelen Točeno",        vol:"0.5",  price:250 },
+        { name:"Jelen Točeno",        vol:"0.3",  price:190 },
+        { name:"Jelen",               vol:"0.5",  price:200 },
+        { name:"Jelen",               vol:"0.33", price:220 },
+        { name:"Staropramen Točeno",  vol:"0.3",  price:210 },
+        { name:"Staropramen Točeno",  vol:"0.5",  price:270 },
+        { name:"Staropramen",         vol:"0.33", price:240 },
+        { name:"Nikšićko Svetlo",     vol:"0.33", price:240 },
+        { name:"Stella Artois",       vol:"0.33", price:290 },
+        { name:"Nikšićko Tamno",      vol:"0.33", price:240 },
+        { name:"Bavaria",             vol:"0.25", price:220 },
+        { name:"Hoegaarden Točeno",   vol:"0.3",  price:350 },
+        { name:"Hoegaarden Točeno",   vol:"0.5",  price:450 },
+        { name:"Corona Extra",        vol:"0.35", price:390 },
+        { name:"Aspall Cyder",        vol:"0.33", price:260 },
       ]},
-
       { group:"Topli napici", items:[
-        { name:"Espresso", vol:"10g", price:180 },
-        { name:"Espresso sa mlekom", vol:"10g", price:200 },
-        { name:"Domaća kafa", vol:"10g", price:160 },
-        { name:"Domaća kafa sa mlekom", vol:"10g", price:180 },
-        { name:"Nescafe", vol:"10g", price:170 },
-        { name:"Nescafe sa mlekom", vol:"10g", price:210 },
-        { name:"Topla čokolada", vol:"25g", price:250 },
-        { name:"Čaj", vol:"15g", price:160 },
-        { name:"Med", vol:"15g", price:50 },
-        { name:"Kuvano vino - Ždrepčeva krv", vol:"0.2", price:260 },
-        { name:"Kuvano vino - Rizling", vol:"0.2", price:260 },
+        { name:"Espresso",                     vol:"10g",  price:180 },
+        { name:"Espresso sa mlekom",           vol:"10g",  price:200 },
+        { name:"Domaća kafa",                  vol:"10g",  price:160 },
+        { name:"Domaća kafa sa mlekom",        vol:"10g",  price:180 },
+        { name:"Nescafe",                      vol:"10g",  price:170 },
+        { name:"Nescafe sa mlekom",            vol:"10g",  price:210 },
+        { name:"Topla čokolada",               vol:"25g",  price:250 },
+        { name:"Čaj",                          vol:"15g",  price:160 },
+        { name:"Med",                          vol:"15g",  price:50  },
+        { name:"Kuvano vino - Ždrepčeva krv",  vol:"0.2",  price:260 },
+        { name:"Kuvano vino - Rizling",        vol:"0.2",  price:260 },
       ]},
-
       { group:"Sokovi negazirani", items:[
-        { name:"Next Jabuka", vol:"0.2", price:240 },
-        { name:"Next Borovnica", vol:"0.2", price:240 },
-        { name:"Next Narandža", vol:"0.2", price:240 },
-        { name:"Next Breskva", vol:"0.2", price:240 },
-        { name:"Next Jagoda", vol:"0.2", price:240 },
-        { name:"Limunada", vol:"0.2", price:180 },
-        { name:"Limunada", vol:"0.3", price:240 },
-        { name:"Limunada", vol:"0.5", price:290 },
-        { name:"Fuze - Ledeni čaj (breskva)", vol:"0.25", price:240 },
-        { name:"Prirodni sok od jabuke", vol:"0.1", price:70 },
+        { name:"Next Jabuka",               vol:"0.2", price:240 },
+        { name:"Next Borovnica",            vol:"0.2", price:240 },
+        { name:"Next Narandža",             vol:"0.2", price:240 },
+        { name:"Next Breskva",              vol:"0.2", price:240 },
+        { name:"Next Jagoda",               vol:"0.2", price:240 },
+        { name:"Limunada",                  vol:"0.2", price:180 },
+        { name:"Limunada",                  vol:"0.3", price:240 },
+        { name:"Limunada",                  vol:"0.5", price:290 },
+        { name:"Fuze - Ledeni čaj (breskva)",vol:"0.25",price:240},
+        { name:"Prirodni sok od jabuke",    vol:"0.1", price:70  },
       ]},
-
       { group:"Sokovi gazirani", items:[
-        { name:"Coca-Cola", vol:"0.25", price:240 },
-        { name:"Coca-Cola Zero", vol:"0.25", price:240 },
-        { name:"Coca-Cola Limeta", vol:"0.25", price:240 },
-        { name:"Schweppes", vol:"0.25", price:240 },
-        { name:"Fanta", vol:"0.25", price:240 },
-        { name:"Sprite", vol:"0.25", price:240 },
-        { name:"Cockta", vol:"0.275", price:240 },
-        { name:"Ultra Energy", vol:"0.25", price:230 },
-        { name:"Cedevita", vol:"0.25", price:210 },
-        { name:"Hell", vol:"0.25", price:230 },
+        { name:"Coca-Cola",       vol:"0.25",  price:240 },
+        { name:"Coca-Cola Zero",  vol:"0.25",  price:240 },
+        { name:"Coca-Cola Limeta",vol:"0.25",  price:240 },
+        { name:"Schweppes",       vol:"0.25",  price:240 },
+        { name:"Fanta",           vol:"0.25",  price:240 },
+        { name:"Sprite",          vol:"0.25",  price:240 },
+        { name:"Cockta",          vol:"0.275", price:240 },
+        { name:"Ultra Energy",    vol:"0.25",  price:230 },
+        { name:"Cedevita",        vol:"0.25",  price:210 },
+        { name:"Hell",            vol:"0.25",  price:230 },
       ]},
-
       { group:"Mineralna voda", items:[
         { name:"Voda Rosa (negazirano)", vol:"0.33", price:180 },
-        { name:"Voda Rosa (gazirano)", vol:"0.33", price:180 },
-        { name:"Soda voda", vol:"0.2", price:40 },
-        { name:"Romerquelle", vol:"0.33", price:180 },
+        { name:"Voda Rosa (gazirano)",   vol:"0.33", price:180 },
+        { name:"Soda voda",              vol:"0.2",  price:40  },
+        { name:"Romerquelle",            vol:"0.33", price:180 },
       ]},
-
       { group:"Žestoka pića", items:[
-        { name:"Tequila Camino", vol:"0.03", price:240 },
-        { name:"Metaxa", vol:"0.03", price:240 },
-        { name:"Jack Daniels", vol:"0.03", price:300 },
-        { name:"Ballantines", vol:"0.03", price:280 },
-        { name:"Stock", vol:"0.03", price:190 },
-        { name:"Finlandia", vol:"0.03", price:210 },
-        { name:"Martini Bianco", vol:"0.05", price:200 },
-        { name:"Vermouth", vol:"0.05", price:170 },
-        { name:"Baileys", vol:"0.05", price:210 },
-        { name:"Campari", vol:"0.03", price:200 },
-        { name:"Jagermeister", vol:"0.03", price:260 },
-        { name:"Gorki List", vol:"0.05", price:200 },
-        { name:"Rum", vol:"0.05", price:180 },
-        { name:"Vinjak", vol:"0.05", price:200 },
-        { name:"Zlatna Viljamovka", vol:"0.05", price:290 },
-        { name:"Zlatna Kajsija", vol:"0.05", price:290 },
-        { name:"Zlatna Dunja", vol:"0.05", price:290 },
+        { name:"Tequila Camino",      vol:"0.03", price:240 },
+        { name:"Metaxa",              vol:"0.03", price:240 },
+        { name:"Jack Daniels",        vol:"0.03", price:300 },
+        { name:"Ballantines",         vol:"0.03", price:280 },
+        { name:"Stock",               vol:"0.03", price:190 },
+        { name:"Finlandia",           vol:"0.03", price:210 },
+        { name:"Martini Bianco",      vol:"0.05", price:200 },
+        { name:"Vermouth",            vol:"0.05", price:170 },
+        { name:"Baileys",             vol:"0.05", price:210 },
+        { name:"Campari",             vol:"0.03", price:200 },
+        { name:"Jagermeister",        vol:"0.03", price:260 },
+        { name:"Gorki List",          vol:"0.05", price:200 },
+        { name:"Rum",                 vol:"0.05", price:180 },
+        { name:"Vinjak",              vol:"0.05", price:200 },
+        { name:"Zlatna Viljamovka",   vol:"0.05", price:290 },
+        { name:"Zlatna Kajsija",      vol:"0.05", price:290 },
+        { name:"Zlatna Dunja",        vol:"0.05", price:290 },
         { name:"Gin Bombay Sapphire", vol:"0.03", price:210 },
       ]},
-
       { group:"Vina", items:[
-        { name:"Sangria", vol:"0.1", price:130 },
-        { name:"Sangria", vol:"0.2", price:260 },
-        { name:"Ždrepčeva krv", vol:"0.1", price:130 },
-        { name:"Ždrepčeva krv", vol:"0.2", price:260 },
-        { name:"Vranac", vol:"0.1", price:130 },
-        { name:"Vranac", vol:"0.2", price:260 },
-        { name:"Rizling", vol:"0.1", price:130 },
-        { name:"Rizling", vol:"0.2", price:260 },
-        { name:"Rose", vol:"0.1", price:130 },
-        { name:"Rose", vol:"0.2", price:260 },
+        { name:"Sangria",         vol:"0.1", price:130 },
+        { name:"Sangria",         vol:"0.2", price:260 },
+        { name:"Ždrepčeva krv",   vol:"0.1", price:130 },
+        { name:"Ždrepčeva krv",   vol:"0.2", price:260 },
+        { name:"Vranac",          vol:"0.1", price:130 },
+        { name:"Vranac",          vol:"0.2", price:260 },
+        { name:"Rizling",         vol:"0.1", price:130 },
+        { name:"Rizling",         vol:"0.2", price:260 },
+        { name:"Rose",            vol:"0.1", price:130 },
+        { name:"Rose",            vol:"0.2", price:260 },
       ]},
     ];
 
-    // ===== UI =====
+    // ===== HELPERS =====
     let filter = "all";
 
     function fmtRSD(n){
@@ -687,6 +699,18 @@
       return new Intl.NumberFormat("sr-RS").format(n) + " RSD";
     }
 
+    function openLightbox(src, alt){
+      const lb = document.getElementById("lightbox");
+      const img = document.getElementById("lightboxImg");
+      img.src = src; img.alt = alt;
+      lb.classList.add("open");
+    }
+    function closeLightbox(){
+      document.getElementById("lightbox").classList.remove("open");
+    }
+    document.addEventListener("keydown", e => { if(e.key==="Escape") closeLightbox(); });
+
+    // ===== RENDER PIZZA =====
     function renderMenu(){
       const q = (document.getElementById("search").value || "").trim().toLowerCase();
       const list = document.getElementById("menuList");
@@ -700,32 +724,53 @@
       });
 
       filtered.forEach(p => {
+        const imgFile = imgMap[p.id];
+        const imgSrc  = imgFile ? IMG_BASE + encodeURIComponent(imgFile) : null;
+
         const el = document.createElement("div");
         el.className = "menuItem";
 
-        const left = document.createElement("div");
-        left.innerHTML = `
-          <div>
-            <h4>${p.name}</h4>
-            <p>${p.desc ? "(" + p.desc + ")" : ""}</p>
-          </div>
+        // --- Image tray ---
+        const tray = document.createElement("div");
+        tray.className = "menuImg";
+        if(imgSrc){
+          const img = document.createElement("img");
+          img.src = imgSrc;
+          img.alt = p.name;
+          img.loading = "lazy";
+          img.style.cursor = "zoom-in";
+          img.addEventListener("click", e => { e.stopPropagation(); openLightbox(imgSrc, p.name); });
+          tray.appendChild(img);
+        } else {
+          const ph = document.createElement("div");
+          ph.className = "imgPlaceholder";
+          ph.textContent = "🍕";
+          tray.appendChild(ph);
+        }
+
+        // --- Info ---
+        const info = document.createElement("div");
+        info.className = "menuInfo";
+        info.innerHTML = `
+          <h4>${p.name}</h4>
+          ${p.desc ? `<p>${p.desc}</p>` : ""}
+          ${(p.tags||[]).length ? `<div class="tagRow">${p.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div>` : ""}
         `;
 
-        const right = document.createElement("div");
-        right.className = "prices";
-        right.innerHTML = `
-          ${sizes.map(s => {
-            const v = p.price[s.key];
-            return `
-              <div class="priceRow">
-                <span class="lbl">${s.key}</span>
-                <span class="val ${v===null?'na':''}">${fmtRSD(v)}</span>
-              </div>`;
-          }).join("")}
-        `;
+        // --- Prices ---
+        const prices = document.createElement("div");
+        prices.className = "prices";
+        prices.innerHTML = sizes.map(s => {
+          const v = p.price[s.key];
+          return `<div class="priceRow">
+            <span class="lbl">${s.key}</span>
+            <span class="val ${v===null?'na':''}">${fmtRSD(v)}</span>
+          </div>`;
+        }).join("");
 
-        el.appendChild(left);
-        el.appendChild(right);
+        el.appendChild(tray);
+        el.appendChild(info);
+        el.appendChild(prices);
         list.appendChild(el);
       });
 
@@ -738,33 +783,29 @@
       }
     }
 
+    // ===== RENDER EXTRAS =====
     function renderExtras(){
       const list = document.getElementById("extrasList");
       list.innerHTML = "";
-
       extras.forEach(x => {
         const el = document.createElement("div");
-        el.className = "menuItem";
+        el.className = "extraItem";
 
         const left = document.createElement("div");
-        left.innerHTML = `
-          <h4>${x.name}</h4>
-          <p>${x.desc || ""}</p>
-        `;
+        left.innerHTML = `<h4>${x.name}</h4><p>${x.desc || ""}</p>`;
 
         const right = document.createElement("div");
-        right.className = "prices";
+        right.className = "extraPrices";
 
         if (typeof x.fixed === "number"){
           right.innerHTML = `<div class="priceRow"><span class="lbl">Cena</span><span class="val">${fmtRSD(x.fixed)}</span></div>`;
         } else {
           right.innerHTML = sizes.map(s => {
             const v = x.bySize?.[s.key] ?? null;
-            return `
-              <div class="priceRow">
-                <span class="lbl">${s.key}</span>
-                <span class="val ${v===null?'na':''}">${fmtRSD(v)}</span>
-              </div>`;
+            return `<div class="priceRow">
+              <span class="lbl">${s.key}</span>
+              <span class="val ${v===null?'na':''}">${fmtRSD(v)}</span>
+            </div>`;
           }).join("");
         }
 
@@ -774,30 +815,23 @@
       });
     }
 
+    // ===== RENDER DRINKS =====
     function renderDrinks(){
       const list = document.getElementById("drinksList");
       list.innerHTML = "";
-
       drinks.forEach(section => {
         const block = document.createElement("div");
         block.className = "drinkBlock";
-
         const head = document.createElement("div");
         head.className = "drinkHead";
         head.innerHTML = `<b>${section.group}</b><span class="muted" style="font-size:12px">RSD</span>`;
-
         const body = document.createElement("div");
         body.className = "drinkBody";
         body.innerHTML = section.items.map(i => `
           <div class="drinkRow">
-            <div class="l">
-              ${i.name}
-              ${i.vol ? `<span class="sub">${i.vol}</span>` : ``}
-            </div>
+            <div class="l">${i.name}${i.vol ? `<span class="sub">${i.vol}</span>` : ``}</div>
             <div class="r">${fmtRSD(i.price)}</div>
-          </div>
-        `).join("");
-
+          </div>`).join("");
         block.appendChild(head);
         block.appendChild(body);
         list.appendChild(block);
