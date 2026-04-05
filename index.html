@@ -412,7 +412,7 @@
 <body>
   <header class="topbar">
     <div class="brand">
-      <img src="https://raw.githubusercontent.com/emileros1971-blip/puboldpalic/main/assets/IMG-c9d5f82ad0cd8a5179ba4bbf9b49511b-V__1_.png" alt="Pub Old Palić logo" style="width:88px;height:88px;object-fit:contain;flex:0 0 auto;" />
+      <img src="https://raw.githubusercontent.com/emileros1971-blip/puboldpalic/main/assets/IMG-c9d5f82ad0cd8a5179ba4bbf9b49511b-V%20%281%29.png" alt="Pub Old Palić logo" style="width:88px;height:88px;object-fit:contain;flex:0 0 auto;" />
       <div style="min-width:0">
         <h1>Pub Old Palić Pizzeria</h1>
         <p class="sub">Meni sa cenama • Pizza + piće</p>
@@ -534,7 +534,7 @@
       "brotbeli":   "Beli brot.png",
       "sir":        "sa sirom.png",
       "sirglj":     "sa sirom i gljivama.png",
-      "veg":        "1000039480.png",
+      "veg":        "1000040716.png",
       "sunk":       "Sa sunkom.png",
       "kukur":      "Sa kukuruzom.png",
       "glj":        "sa gljivama.png",
@@ -549,7 +549,7 @@
       "sardine":    "sardinijama.png",
       "skoljke":    "Sa skoljkama.png",
       "delikates":  "Delikates.png",
-      "tunjevina":  "A la Chef(1).png",
+      "tunjevina":  "1000040715.png",
       "atlantic":   "Atlanctic.png",
       "4god":       "4 godisnja doba.png",
     };
@@ -725,7 +725,7 @@
 
       filtered.forEach(p => {
         const imgFile = imgMap[p.id];
-        const imgSrc  = imgFile ? IMG_BASE + imgFile.split(' ').join('%20') : null;
+        const imgSrc  = imgFile ? IMG_BASE + imgFile.split(' ').join('%20').split('(').join('%28').split(')').join('%29') : null;
 
         const el = document.createElement("div");
         el.className = "menuItem";
