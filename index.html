@@ -412,7 +412,7 @@
 <body>
   <header class="topbar">
     <div class="brand">
-      <img src="https://raw.githubusercontent.com/YOUR_USER/YOUR_REPO/main/assets/IMG-c9d5f82ad0cd8a5179ba4bbf9b49511b-V__1_.png" alt="Pub Old Palić logo" style="width:88px;height:88px;object-fit:contain;flex:0 0 auto;" />
+      <img src="https://raw.githubusercontent.com/emileros1971-blip/puboldpalic/main/assets/IMG-c9d5f82ad0cd8a5179ba4bbf9b49511b-V__1_.png" alt="Pub Old Palić logo" style="width:88px;height:88px;object-fit:contain;flex:0 0 auto;" />
       <div style="min-width:0">
         <h1>Pub Old Palić Pizzeria</h1>
         <p class="sub">Meni sa cenama • Pizza + piće</p>
@@ -526,7 +526,7 @@
     // ===== GITHUB ASSETS BASE URL =====
     // Change this to your actual GitHub raw assets URL, e.g.:
     // const IMG_BASE = "https://raw.githubusercontent.com/YOUR_USER/YOUR_REPO/main/assets/";
-    const IMG_BASE = "./";  // local fallback — works when images are in same folder
+    const IMG_BASE = "https://raw.githubusercontent.com/emileros1971-blip/puboldpalic/main/assets/";
 
     // ===== PIZZA → IMAGE FILENAME MAP =====
     const imgMap = {
@@ -725,7 +725,7 @@
 
       filtered.forEach(p => {
         const imgFile = imgMap[p.id];
-        const imgSrc  = imgFile ? IMG_BASE + encodeURIComponent(imgFile) : null;
+        const imgSrc  = imgFile ? IMG_BASE + imgFile.split(' ').join('%20') : null;
 
         const el = document.createElement("div");
         el.className = "menuItem";
