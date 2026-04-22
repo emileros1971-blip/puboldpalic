@@ -103,6 +103,13 @@
       display:inline-flex; align-items:center; gap:8px;
       box-shadow: 0 10px 18px rgba(0,0,0,.25);
       white-space:nowrap;
+      text-decoration:none; cursor:pointer;
+    }
+    .pill:hover{
+      border-color:rgba(255,176,32,.35);
+      background:rgba(255,176,32,.08);
+      color:var(--text);
+      transition:.15s ease;
     }
 
     .btn{
@@ -437,12 +444,12 @@
           <h2>Meni.<br/>Poručuješ konobaru ili telefonom.</h2>
           <p>Cene su prikazane u RSD. Za porudžbine i informacije: <b>+381 24 753103</b>.</p>
           <div class="meta">
-            <span class="pill">🍕 Pizza</span>
-            <span class="pill">🍺 Pivo</span>
-            <span class="pill">☕ Topli napici</span>
-            <span class="pill">🥤 Sokovi</span>
-            <span class="pill">🥃 Žestoka pića</span>
-            <span class="pill">🍷 Vina</span>
+            <a class="pill" href="#menu">🍕 Pizza</a>
+            <a class="pill" href="#drink-piva">🍺 Pivo</a>
+            <a class="pill" href="#drink-topli">☕ Topli napici</a>
+            <a class="pill" href="#drink-sokovi-neg">🥤 Sokovi</a>
+            <a class="pill" href="#drink-zestoka">🥃 Žestoka pića</a>
+            <a class="pill" href="#drink-vina">🍷 Vina</a>
           </div>
         </div>
 
@@ -594,7 +601,7 @@
     ];
 
     const drinks = [
-      { group:"Piva", items:[
+      { group:"Piva", id:"drink-piva", items:[
         { name:"Jelen Točeno",        vol:"0.5",  price:260 },
         { name:"Jelen Točeno",        vol:"0.3",  price:200 },
         { name:"Jelen",               vol:"0.5",  price:200 },
@@ -612,7 +619,7 @@
         { name:"Aspall Cyder",        vol:"0.33", price:270 },
         { name:"Madri",               vol:"0.33", price:240 },
       ]},
-      { group:"Topli napici", items:[
+      { group:"Topli napici", id:"drink-topli", items:[
         { name:"Espresso",                     vol:"10g",  price:200 },
         { name:"Espresso sa mlekom",           vol:"10g",  price:220 },
         { name:"Domaća kafa",                  vol:"10g",  price:180 },
@@ -625,7 +632,7 @@
         { name:"Kuvano vino - Ždrepčeva krv",  vol:"0.2",  price:270 },
         { name:"Kuvano vino - Rizling",        vol:"0.2",  price:270 },
       ]},
-      { group:"Sokovi negazirani", items:[
+      { group:"Sokovi negazirani", id:"drink-sokovi-neg", items:[
         { name:"Next Jabuka",               vol:"0.2", price:250 },
         { name:"Next Borovnica",            vol:"0.2", price:250 },
         { name:"Next Narandža",             vol:"0.2", price:250 },
@@ -637,7 +644,7 @@
         { name:"Fuze - Ledeni čaj (breskva)",vol:"0.25",price:250},
         { name:"Prirodni sok od jabuke",    vol:"0.1", price:70  },
       ]},
-      { group:"Sokovi gazirani", items:[
+      { group:"Sokovi gazirani", id:"drink-sokovi-gaz", items:[
         { name:"Coca-Cola",       vol:"0.25",  price:250 },
         { name:"Coca-Cola Zero",  vol:"0.25",  price:250 },
         { name:"Coca-Cola Limeta",vol:"0.25",  price:250 },
@@ -649,13 +656,13 @@
         { name:"Cedevita",        vol:"0.25",  price:220 },
         { name:"Hell",            vol:"0.25",  price:240 },
       ]},
-      { group:"Mineralna voda", items:[
+      { group:"Mineralna voda", id:"drink-voda", items:[
         { name:"Voda Rosa (negazirano)", vol:"0.33", price:190 },
         { name:"Voda Rosa (gazirano)",   vol:"0.33", price:190 },
         { name:"Soda voda",              vol:"0.2",  price:40  },
         { name:"Romerquelle",            vol:"0.33", price:190 },
       ]},
-      { group:"Žestoka pića", items:[
+      { group:"Žestoka pića", id:"drink-zestoka", items:[
         { name:"Tequila Camino",      vol:"0.03", price:250 },
         { name:"Metaxa",              vol:"0.03", price:250 },
         { name:"Jack Daniels",        vol:"0.03", price:300 },
@@ -675,7 +682,7 @@
         { name:"Zlatna Dunja",        vol:"0.05", price:300 },
         { name:"Gin Bombay Sapphire", vol:"0.03", price:220 },
       ]},
-      { group:"Vina", items:[
+      { group:"Vina", id:"drink-vina", items:[
         { name:"Sangria",         vol:"0.1", price:140 },
         { name:"Sangria",         vol:"0.2", price:280 },
         { name:"Ždrepčeva krv",   vol:"0.1", price:140 },
@@ -820,6 +827,7 @@
       drinks.forEach(section => {
         const block = document.createElement("div");
         block.className = "drinkBlock";
+        if (section.id) block.id = section.id;
         const head = document.createElement("div");
         head.className = "drinkHead";
         head.innerHTML = `<b>${section.group}</b><span class="muted" style="font-size:12px">RSD</span>`;
