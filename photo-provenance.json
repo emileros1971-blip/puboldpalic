@@ -1,0 +1,212 @@
+[
+  {
+    "asset": "tunjevina",
+    "source": "assets/1000040715.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/1000040715.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "chief",
+    "source": "assets/A la chef.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/A la chef.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "4god",
+    "source": "assets/4 godisnja doba.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/4 godisnja doba.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "veg",
+    "source": "assets/1000040716.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/1000040716.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "acapulco",
+    "source": "assets/Acapulco.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/Acapulco.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "brotbeli",
+    "source": "assets/Beli brot.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/Beli brot.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "atlantic",
+    "source": "assets/Atlanctic.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/Atlanctic.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "delikates",
+    "source": "assets/Delikates.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/Delikates.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "brot",
+    "source": "assets/Crveni brot.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/Crveni brot.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "domaca",
+    "source": "assets/Domaca.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/Domaca.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "hawaii",
+    "source": "assets/Hawaii.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/Hawaii.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "madonna",
+    "source": "assets/Madonna.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/Madonna.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "mes",
+    "source": "assets/Mesana.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/Mesana.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "mexico",
+    "source": "assets/Mexico.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/Mexico.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "pub",
+    "source": "assets/PUB.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/PUB.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "kukur",
+    "source": "assets/Sa kukuruzom.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/Sa kukuruzom.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "salvatore",
+    "source": "assets/Salvatore.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/Salvatore.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "skoljke",
+    "source": "assets/Sa skoljkama.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/Sa skoljkama.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "glj",
+    "source": "assets/sa gljivama.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/sa gljivama.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "sirglj",
+    "source": "assets/sa sirom i gljivama.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/sa sirom i gljivama.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "sir",
+    "source": "assets/sa sirom.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/sa sirom.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "sunk",
+    "source": "assets/Sa sunkom.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/Sa sunkom.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "sardine",
+    "source": "assets/sardinijama.png",
+    "prompt": "Use case: precise-object-edit. Edit target is this exact original pizza photograph for Pub Old Palić restaurant menu. Keep 100% product identity: identical toppings, their quantities and arrangement, identical crust thickness, shape and doneness, white plate. Do NOT create a different pizza or add any garnish. Change only the empty backdrop, framing and photographic lighting: place the same pizza on a warm dark oak table, professionally styled food photography with moody charcoal background, subtle amber light, realistic appealing textures, complete pizza and plate visible, pizza fills the image, landscape 4:3 composition, softly blurred background, no extra food, no beer, no cutlery across pizza, no text, no people. Reference filename assets/sardinijama.png.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "staropramen",
+    "source": null,
+    "prompt": "Use case: photorealistic-natural. Asset: premium Pub Old Palić website editorial product photograph. A cold golden Staropramen draft beer in a tall straight clear branded Staropramen beer glass, creamy white foam, condensation, green Staropramen tap badge softly blurred behind. Landscape 4:3, product occupies most of frame. Coherent sophisticated heritage pub mood, dark charcoal and oak background, warm brass highlights, shallow depth of field, exceptionally photorealistic, natural proportions, no captions, no watermark, no people except specified baker's hands, no added products.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "jelen",
+    "source": null,
+    "prompt": "Use case: photorealistic-natural. Asset: premium Pub Old Palić website editorial product photograph. A cold golden Jelen draft beer in a tall clear pint glass, dense white foam, tiny condensation droplets. Beside a softly blurred Jelen draft beer tap badge. Landscape 4:3, product occupies most of frame. Coherent sophisticated heritage pub mood, dark charcoal and oak background, warm brass highlights, shallow depth of field, exceptionally photorealistic, natural proportions, no captions, no watermark, no people except specified baker's hands, no added products.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "martini",
+    "source": null,
+    "prompt": "Use case: photorealistic-natural. Asset: premium Pub Old Palić website editorial product photograph. Martini Bianco vermouth served over large clear ice cubes in a short elegant rocks glass with a twist of lemon peel, a Martini Bianco bottle with authentic recognisable label behind, no olives, no shaker, no cocktail styling. Landscape 4:3, product occupies most of frame. Coherent sophisticated heritage pub mood, dark charcoal and oak background, warm brass highlights, shallow depth of field, exceptionally photorealistic, natural proportions, no captions, no watermark, no people except specified baker's hands, no added products.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "baileys",
+    "source": null,
+    "prompt": "Use case: photorealistic-natural. Asset: premium Pub Old Palić website editorial product photograph. Baileys Irish cream in a short cut-crystal glass with large ice cubes, rich creamy beige drink, authentic Baileys bottle softly blurred behind. Landscape 4:3, product occupies most of frame. Coherent sophisticated heritage pub mood, dark charcoal and oak background, warm brass highlights, shallow depth of field, exceptionally photorealistic, natural proportions, no captions, no watermark, no people except specified baker's hands, no added products.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "ballantines",
+    "source": null,
+    "prompt": "Use case: photorealistic-natural. Asset: premium Pub Old Palić website editorial product photograph. Ballantine's blended Scotch whisky, amber whisky in crystal tumbler with two ice cubes, authentic Ballantine's bottle beside, refined warm lighting. Landscape 4:3, product occupies most of frame. Coherent sophisticated heritage pub mood, dark charcoal and oak background, warm brass highlights, shallow depth of field, exceptionally photorealistic, natural proportions, no captions, no watermark, no people except specified baker's hands, no added products.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "bombay",
+    "source": null,
+    "prompt": "Use case: photorealistic-natural. Asset: premium Pub Old Palić website editorial product photograph. Authentic blue Bombay Sapphire gin bottle, alongside a clear gin serving over ice in a rocks glass with lemon twist, fresh condensation. Landscape 4:3, product occupies most of frame. Coherent sophisticated heritage pub mood, dark charcoal and oak background, warm brass highlights, shallow depth of field, exceptionally photorealistic, natural proportions, no captions, no watermark, no people except specified baker's hands, no added products.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "johnnie-walker",
+    "source": null,
+    "prompt": "Use case: photorealistic-natural. Asset: premium Pub Old Palić website editorial product photograph. Johnnie Walker Scotch whisky in clear rocks glass with large ice cube, amber reflections and recognisable Johnnie Walker bottle in background, label unobtrusive. Landscape 4:3, product occupies most of frame. Coherent sophisticated heritage pub mood, dark charcoal and oak background, warm brass highlights, shallow depth of field, exceptionally photorealistic, natural proportions, no captions, no watermark, no people except specified baker's hands, no added products.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "lavazza",
+    "source": null,
+    "prompt": "Use case: photorealistic-natural. Asset: premium Pub Old Palić website editorial product photograph. Perfect Lavazza espresso crema in a white porcelain espresso cup and saucer carrying accurate blue LAVAZZA logo, on warm dark oak café table, faint steam, close editorial photograph. Landscape 4:3, product occupies most of frame. Coherent sophisticated heritage pub mood, dark charcoal and oak background, warm brass highlights, shallow depth of field, exceptionally photorealistic, natural proportions, no captions, no watermark, no people except specified baker's hands, no added products.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "takeaway",
+    "source": null,
+    "prompt": "Use case: photorealistic-natural. Asset: premium Pub Old Palić website editorial product photograph. One premium Lavazza takeaway coffee cup, white with accurate blue LAVAZZA logo and matte black lid, beside a white Lavazza espresso cup, morning sunshine on dark oak café table, no hands. Landscape 4:3, product occupies most of frame. Coherent sophisticated heritage pub mood, dark charcoal and oak background, warm brass highlights, shallow depth of field, exceptionally photorealistic, natural proportions, no captions, no watermark, no people except specified baker's hands, no added products.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "wine",
+    "source": null,
+    "prompt": "Use case: photorealistic-natural. Asset: premium Pub Old Palić website editorial product photograph. Elegant red and white wine glasses on dark oak pub table, warm amber evening side lighting, authentic wine texture, minimal calm composition. Landscape 4:3, product occupies most of frame. Coherent sophisticated heritage pub mood, dark charcoal and oak background, warm brass highlights, shallow depth of field, exceptionally photorealistic, natural proportions, no captions, no watermark, no people except specified baker's hands, no added products.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "dough",
+    "source": null,
+    "prompt": "Use case: photorealistic-natural. Asset: premium Pub Old Palić website editorial product photograph. Close view of artisan pizza dough being gently stretched by a baker's hands on a lightly flour-dusted wooden counter, medium thickness round pub-style dough, premium ingredient editorial photography, no face, no stone oven claims. Landscape 4:3, product occupies most of frame. Coherent sophisticated heritage pub mood, dark charcoal and oak background, warm brass highlights, shallow depth of field, exceptionally photorealistic, natural proportions, no captions, no watermark, no people except specified baker's hands, no added products.",
+    "method": "built-in imagegen"
+  },
+  {
+    "asset": "ingredients",
+    "source": null,
+    "prompt": "Use case: photorealistic-natural. Asset: premium Pub Old Palić website editorial product photograph. Fresh cherry tomatoes, arugula leaves, cheese, red pepper, sliced mushrooms and flour, carefully arranged on dark oak counter with warm natural side lighting, exquisite real textures. Landscape 4:3, product occupies most of frame. Coherent sophisticated heritage pub mood, dark charcoal and oak background, warm brass highlights, shallow depth of field, exceptionally photorealistic, natural proportions, no captions, no watermark, no people except specified baker's hands, no added products.",
+    "method": "built-in imagegen"
+  }
+]
